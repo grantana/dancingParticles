@@ -8,21 +8,25 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using com.dancingParticles.engine; 
 
 namespace dancingParticles
 {
     /// <summary>
-    /// This is the main type for your game
+    /// This is the main type for your  game
     /// </summary>
-    public class Game1 : Microsoft.Xna.Framework.Game
+    public class Main : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        StateManager stateManager;
 
-        public Game1()
+        public Main()
         {
+            Console.WriteLine("Main init");
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            stateManager = new StateManager(0);
         }
 
         /// <summary>
@@ -71,9 +75,51 @@ namespace dancingParticles
                 this.Exit();
 
             // TODO: Add your update logic here
-
+            //depending on state manager call different base draws
+            switch (stateManager.state)
+            {
+                case 0:
+                    drawSplashScreen();
+                    break;
+                case 1:
+                    drawMenuScreen();
+                    break;
+                case 2:
+                    drawGameScreen();
+                    break;
+                case 3:
+                    drawGameOverScreen();
+                    break;
+                default:
+                    break;
+            }
             base.Update(gameTime);
         }
+
+
+        protected void drawSplashScreen()
+        {
+            Console.WriteLine("drawSplashScreen");
+            graphics.GraphicsDevice.Clear(Color.Black);
+        }
+
+        protected void drawMenuScreen()
+        {
+
+        }
+
+
+        protected void drawGameScreen()
+        {
+
+        }
+
+
+        protected void drawGameOverScreen()
+        {
+
+        }
+
 
         /// <summary>
         /// This is called when the game should draw itself.
