@@ -73,25 +73,10 @@ namespace dancingParticles
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
-
             // TODO: Add your update logic here
-            //depending on state manager call different base draws
-            switch (stateManager.state)
+            if (!stateManager.activated)
             {
-                case 0:
-                    drawSplashScreen();
-                    break;
-                case 1:
-                    drawMenuScreen();
-                    break;
-                case 2:
-                    drawGameScreen();
-                    break;
-                case 3:
-                    drawGameOverScreen();
-                    break;
-                default:
-                    break;
+                stateManager.startInternalTimer(gameTime);
             }
             base.Update(gameTime);
         }
@@ -99,7 +84,6 @@ namespace dancingParticles
 
         protected void drawSplashScreen()
         {
-            Console.WriteLine("drawSplashScreen");
             graphics.GraphicsDevice.Clear(Color.Black);
         }
 
@@ -127,7 +111,24 @@ namespace dancingParticles
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            //depending on state manager call different base draws
+            switch (stateManager.state)
+            {
+                case 0:
+                    drawSplashScreen();
+                    break;
+                case 1:
+                    drawMenuScreen();
+                    break;
+                case 2:
+                    drawGameScreen();
+                    break;
+                case 3:
+                    drawGameOverScreen();
+                    break;
+                default:
+                    break;
+            }
 
             // TODO: Add your drawing code here
 
