@@ -19,7 +19,7 @@ namespace com.dancingParticles.engine
      */
     public class StateManager
     {
-        public bool activated;
+        public bool activated, stageLoaded;
         //Current state
         public int state;
         private int nextState;
@@ -27,25 +27,58 @@ namespace com.dancingParticles.engine
         private float timeToNextState;
 
 
+
         public StateManager(int state)
         {
             this.state = state;
             activated = false;
+            stageLoaded = false;
             Console.WriteLine("StateManager init: "+state);
         }
 
-
+        /*
+         * timeToNextState: set to a negative value in case you want to run the current state forever  
+         * */
         public void loadNextScreen(int nextState, float timeToNextState, GameTime gameTime)
         {
+            Console.WriteLine("loadNextScreen: " + nextState);
+            startTime = gameTime.TotalGameTime.Seconds;
             this.nextState = nextState;
             this.timeToNextState = timeToNextState;
+            stageLoaded = false;
         }
+
+        public void makeSwitch()
+        {
+            this.state = nextState;
+            stageLoaded = true;
+        }
+
 
         public void startInternalTimer(GameTime gameTime) 
         {
             Console.WriteLine("StateManager startInternalTimer: " + gameTime);
             activated = true;
-            //startTime = gameTime. 
+            startTime = gameTime.TotalGameTime.Seconds;
         }
+
+        /*
+         * Tick stateManager and chage state if necessary to next stage 
+         */
+        public void tick(GameTime gameTime)
+        {
+            //Console.WriteLine("gameTime.ElapsedGameTime.Milliseconds: " + gameTime.TotalGameTime.Seconds);
+
+            if ((startTime + timeToNextState) < gameTime.TotalGameTime.Seconds)  
+            {
+                if (!stageLoaded)
+                {
+                    //Console.WriteLine("CHANGE STATE");
+                    makeSwitch();
+                }
+            }
+        }
+
+       
     }
 }

@@ -76,7 +76,17 @@ namespace dancingParticles
             // TODO: Add your update logic here
             if (!stateManager.activated)
             {
+                Console.WriteLine("starting gameTime: " + gameTime);
                 stateManager.startInternalTimer(gameTime);
+                stateManager.loadNextScreen(1, 2, gameTime);
+            }
+            else
+            {
+                stateManager.tick(gameTime);
+                if (stateManager.stageLoaded)
+                {
+                    stateManager.loadNextScreen(stateManager.state+1, 2, gameTime);
+                }
             }
             base.Update(gameTime);
         }
@@ -89,19 +99,19 @@ namespace dancingParticles
 
         protected void drawMenuScreen()
         {
-
+            graphics.GraphicsDevice.Clear(Color.Red);
         }
 
 
         protected void drawGameScreen()
         {
-
+            graphics.GraphicsDevice.Clear(Color.Yellow);
         }
 
 
         protected void drawGameOverScreen()
         {
-
+            graphics.GraphicsDevice.Clear(Color.PaleGoldenrod);
         }
 
 
@@ -127,6 +137,7 @@ namespace dancingParticles
                     drawGameOverScreen();
                     break;
                 default:
+                    Console.WriteLine("state is not defined");
                     break;
             }
 
