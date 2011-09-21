@@ -20,7 +20,7 @@ namespace dancingParticles
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         StateManager stateManager;
-
+        Texture2D splashLogo;
         public Main()
         {
             Console.WriteLine("Main init");
@@ -50,7 +50,7 @@ namespace dancingParticles
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            splashLogo = Content.Load<Texture2D>("splashScreen");
             // TODO: use this.Content to load your game content here
         }
 
@@ -78,7 +78,7 @@ namespace dancingParticles
             {
                 Console.WriteLine("starting gameTime: " + gameTime);
                 stateManager.startInternalTimer(gameTime);
-                stateManager.loadNextScreen(1, 2, gameTime);
+                stateManager.loadNextScreen(1, 5, gameTime);
             }
             else
             {
@@ -94,7 +94,14 @@ namespace dancingParticles
 
         protected void drawSplashScreen()
         {
-            graphics.GraphicsDevice.Clear(Color.Black);
+            graphics.GraphicsDevice.Clear(Color.White);
+            spriteBatch.Begin();
+            Vector2 pos = new Vector2(0, 0);
+            //Console.WriteLine(stateManager.getStateTicks() + ", " + stateManager.maxTicks + " :" + stateManager.getStateTicks() / (stateManager.maxTicks/5));
+            spriteBatch.Draw(splashLogo, pos, new Color(new Vector4(1, 1, 1, stateManager.getStateTicks()/ (stateManager.maxTicks/5) )    ));
+            spriteBatch.End();
+
+           // spriteBatch.Draw(splashLogo, new Vector2(0, 0), Color.White);
         }
 
         protected void drawMenuScreen()

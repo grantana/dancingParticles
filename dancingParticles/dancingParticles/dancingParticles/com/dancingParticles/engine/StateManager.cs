@@ -25,6 +25,8 @@ namespace com.dancingParticles.engine
         private int nextState;
         private float startTime;
         private float timeToNextState;
+        private float currentStateTicks;
+        public float maxTicks;
 
 
 
@@ -45,6 +47,8 @@ namespace com.dancingParticles.engine
             startTime = gameTime.TotalGameTime.Seconds;
             this.nextState = nextState;
             this.timeToNextState = timeToNextState;
+            maxTicks = timeToNextState * 70;
+            currentStateTicks = 0;
             stageLoaded = false;
         }
 
@@ -68,7 +72,7 @@ namespace com.dancingParticles.engine
         public void tick(GameTime gameTime)
         {
             //Console.WriteLine("gameTime.ElapsedGameTime.Milliseconds: " + gameTime.TotalGameTime.Seconds);
-
+            currentStateTicks++;
             if ((startTime + timeToNextState) < gameTime.TotalGameTime.Seconds)  
             {
                 if (!stageLoaded)
@@ -77,6 +81,12 @@ namespace com.dancingParticles.engine
                     makeSwitch();
                 }
             }
+        }
+
+
+        public float getStateTicks()
+        {
+            return currentStateTicks;
         }
 
        

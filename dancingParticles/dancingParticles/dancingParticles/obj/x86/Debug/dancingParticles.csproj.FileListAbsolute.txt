@@ -4,3 +4,4 @@ Z:\dancingParticles\dancingParticles\dancingParticles\obj\x86\Debug\ResolveAssem
 Z:\dancingParticles\dancingParticles\dancingParticles\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 Z:\dancingParticles\dancingParticles\dancingParticles\obj\x86\Debug\dancingParticles.exe
 Z:\dancingParticles\dancingParticles\dancingParticles\obj\x86\Debug\dancingParticles.pdb
+Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\splashScreen.xnb
