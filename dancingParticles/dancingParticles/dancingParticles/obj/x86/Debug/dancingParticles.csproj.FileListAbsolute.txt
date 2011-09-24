@@ -5,3 +5,15 @@ Z:\dancingParticles\dancingParticles\dancingParticles\obj\x86\Debug\Microsoft.Xn
 Z:\dancingParticles\dancingParticles\dancingParticles\obj\x86\Debug\dancingParticles.exe
 Z:\dancingParticles\dancingParticles\dancingParticles\obj\x86\Debug\dancingParticles.pdb
 Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\splashScreen.xnb
+Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\screens\Credits.xnb
+Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\screens\Pause.xnb
+Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\screens\Splash.xnb
+Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\screens\Menu.xnb
+Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\Selector.xnb
+Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\rect.xnb
+Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\hoyoNegro.xnb
+Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\particulaGlow2.xnb
+Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\planeta.xnb
+Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\spaceship.xnb
+Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\particula.xnb
+Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\nave.xnb

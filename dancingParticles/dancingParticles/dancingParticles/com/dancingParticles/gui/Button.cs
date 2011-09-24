@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework;
 namespace com.dancingParticles.gui
 {
     //Simple Button class for GUI elements
-    class Button
+    public class Button
     {
         public int posX, posY, height, width;
         private Rectangle rect;

@@ -1,33 +1,11 @@
-
-dancingParticles/dancingParticles/dancingParticles/obj/x86/Debug/dancingParticles.pdb
-
-dancingParticles/dancingParticles/dancingParticles/bin/x86/Debug/dancingParticles.exe
-
-dancingParticles/dancingParticles/dancingParticles/bin/x86/Debug/dancingParticles.exe
-
-dancingParticles/.DS_Store
-
-.DS_Store
+*/bin/*
+/*/**/x86/**/*
+/*/**/Debug/**/*
 
 dancingParticles/dancingParticles/.DS_Store
+dancingParticles/.DS_Store
 
-dancingParticles/dancingParticles/dancingParticles/bin/*
-dancingParticles/dancingParticles/dancingParticles/obj/*
-dancingParticles/dancingParticles/dancingParticles/obj/x86/Debug/dancingParticles.pdb
 
-dancingParticles/dancingParticles/dancingParticlesContent/dancingParticlesContent.contentproj
-
-dancingParticles/dancingParticles/dancingParticlesContent/dancingParticlesContent.contentproj
-
-dancingParticles/dancingParticles/dancingParticles/obj/x86/Debug/dancingParticles.pdb
-
-dancingParticles/dancingParticles/dancingParticles/obj/x86/Debug/dancingParticles.exe
-
-dancingParticles/dancingParticles/dancingParticles/bin/x86/Debug/dancingParticles.exe
-
-dancingParticles/dancingParticles/dancingParticles/bin/x86/Debug/dancingParticles.exe
-
-dancingParticles/dancingParticles/dancingParticles/obj/x86/Debug/dancingParticles.pdb
 
 dancingParticles/dancingParticles/dancingParticles/obj/x86/Debug/dancingParticles.exe
 
@@ -35,8 +13,32 @@ dancingParticles/dancingParticles/dancingParticles/obj/x86/Debug/dancingParticle
 
 dancingParticles/dancingParticles/dancingParticles/obj/x86/Debug/cachefile-{4EEA8B1B-CA81-40BE-88AF-4C71F117B554}-targetpath.txt
 
+dancingParticles/dancingParticles/dancingParticles/obj/x86/Debug/ResolveAssemblyReference.cache
+
+dancingParticles/dancingParticles/dancingParticles/obj/x86/Debug/Microsoft.Xna.Framework.RuntimeProfile.txt
+
+dancingParticles/dancingParticles/dancingParticles/dancingParticles.csproj
+
 dancingParticles/dancingParticles/dancingParticles/bin/x86/Debug/dancingParticles.exe
 
 dancingParticles/dancingParticles/dancingParticles/bin/x86/Debug/dancingParticles.pdb
+
+dancingParticles/dancingParticles.suo
+
+dancingParticles/dancingParticles/dancingParticles/obj/x86/Debug/dancingParticles.exe
+
+dancingParticles/dancingParticles/dancingParticles/obj/x86/Debug/dancingParticles.pdb
+
+dancingParticles/dancingParticles/dancingParticles/obj/x86/Debug/dancingParticles.csproj.FileListAbsolute.txt
+
+dancingParticles/dancingParticles/dancingParticles/bin/x86/Debug/dancingParticles.exe
+
+dancingParticles/dancingParticles/dancingParticles/obj/x86/Debug/Microsoft.Xna.Framework.RuntimeProfile.txt
+
+dancingParticles/dancingParticles/dancingParticles/obj/x86/Debug/ResolveAssemblyReference.cache
+
+dancingParticles/dancingParticles/dancingParticles/obj/x86/Debug/dancingParticles.csproj.FileListAbsolute.txt
+
+dancingParticles/dancingParticles/dancingParticles/obj/x86/Debug/cachefile-{4EEA8B1B-CA81-40BE-88AF-4C71F117B554}-targetpath.txt
 
 dancingParticles/dancingParticles/dancingParticles/obj/x86/Debug/dancingParticles.exe

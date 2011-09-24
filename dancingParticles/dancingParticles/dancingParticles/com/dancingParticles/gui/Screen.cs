@@ -9,10 +9,15 @@ using com.dancingParticles.gui;
 
 namespace com.dancingParticles.gui
 {
-    class Screen
+    public class Screen
     {
         public List<Button> clickableElements;
         public Texture2D back, rect;
+
+        public Screen()
+        {
+            /** init ***/
+        }
         public Screen(Texture2D back, Texture2D rect)
         {
             clickableElements = new List<Button>();
@@ -20,7 +25,15 @@ namespace com.dancingParticles.gui
             this.rect = rect;
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        protected void init(Texture2D back, Texture2D rect)
+        {
+            /*** En caso que se necesite llamar por fuera ***/
+            clickableElements = new List<Button>();
+            this.back = back;
+            this.rect = rect;
+        }
+
+        public virtual void Draw(SpriteBatch spriteBatch)
         {
             Vector2 pos = new Vector2(0, 0);
             spriteBatch.Draw(back, pos, Color.White);

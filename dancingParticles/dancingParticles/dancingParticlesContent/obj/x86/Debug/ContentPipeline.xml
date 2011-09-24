@@ -17,7 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\screens\Credits.xnb</Output>
-      <Time>2011-10-11T00:15:10-05:00</Time>
+      <Time>2011-10-11T01:37:10-05:00</Time>
     </Item>
     <Item>
       <Source>mock\gui\screens\Pause.jpg</Source>
@@ -26,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\screens\Pause.xnb</Output>
-      <Time>2011-10-11T00:15:10-05:00</Time>
+      <Time>2011-10-11T01:37:10-05:00</Time>
     </Item>
     <Item>
       <Source>mock\gui\screens\Splash.jpg</Source>
@@ -35,7 +35,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\screens\Splash.xnb</Output>
-      <Time>2011-10-11T00:15:10-05:00</Time>
+      <Time>2011-10-11T01:37:10-05:00</Time>
     </Item>
     <Item>
       <Source>mock\gui\screens\Menu.jpg</Source>
@@ -44,7 +44,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\screens\Menu.xnb</Output>
-      <Time>2011-10-11T00:27:52-05:00</Time>
+      <Time>2011-10-11T01:37:10-05:00</Time>
     </Item>
     <Item>
       <Source>mock\gui\Selector.jpg</Source>
@@ -53,7 +53,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\Selector.xnb</Output>
-      <Time>2011-10-11T00:34:28-05:00</Time>
+      <Time>2011-10-11T01:37:10-05:00</Time>
     </Item>
     <Item>
       <Source>mock\gui\rect.PNG</Source>
@@ -62,7 +62,61 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\rect.xnb</Output>
-      <Time>2011-10-11T01:04:41-05:00</Time>
+      <Time>2011-10-11T01:37:10-05:00</Time>
+    </Item>
+    <Item>
+      <Source>mock\gui\hoyoNegro.png</Source>
+      <Name>mock\gui\hoyoNegro</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\hoyoNegro.xnb</Output>
+      <Time>2011-09-24T16:17:47-05:00</Time>
+    </Item>
+    <Item>
+      <Source>mock\gui\particulaGlow2.png</Source>
+      <Name>mock\gui\particulaGlow2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\particulaGlow2.xnb</Output>
+      <Time>2011-09-24T16:17:47-05:00</Time>
+    </Item>
+    <Item>
+      <Source>mock\gui\planeta.png</Source>
+      <Name>mock\gui\planeta</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\planeta.xnb</Output>
+      <Time>2011-09-24T16:17:47-05:00</Time>
+    </Item>
+    <Item>
+      <Source>mock\gui\spaceship.jpg</Source>
+      <Name>mock\gui\spaceship</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\spaceship.xnb</Output>
+      <Time>2011-09-24T16:17:47-05:00</Time>
+    </Item>
+    <Item>
+      <Source>mock\gui\particula.png</Source>
+      <Name>mock\gui\particula</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\particula.xnb</Output>
+      <Time>2011-09-24T16:22:53-05:00</Time>
+    </Item>
+    <Item>
+      <Source>mock\gui\nave.png</Source>
+      <Name>mock\gui\nave</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\nave.xnb</Output>
+      <Time>2011-09-24T16:23:35-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

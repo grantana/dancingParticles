@@ -107,8 +107,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="com\dancingParticles\engine\Atractor.cs" />
+    <Compile Include="com\dancingParticles\engine\Nave.cs" />
+    <Compile Include="com\dancingParticles\engine\Particle.cs" />
+    <Compile Include="com\dancingParticles\engine\Physics.cs" />
     <Compile Include="com\dancingParticles\gui\Button.cs" />
     <Compile Include="com\dancingParticles\gui\Screen.cs" />
+    <Compile Include="com\dancingParticles\gui\screens\Juego.cs" />
     <Compile Include="com\dancingParticles\Properties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />

@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework.Media;
 using com.dancingParticles.engine;
 using com.dancingParticles.gui;
 using com.dancingParticles;
+using com.dancingParticles.gui.screens;
 
 namespace dancingParticles
 {
@@ -24,7 +25,10 @@ namespace dancingParticles
         StateManager stateManager;
         Texture2D screenSplashTexture, screenMenuTexture, screenPauseTexture, screenCreditsTexture, guiSelectorTexture, guiRectangeTexture;
 
+        /*** Pantallas ***/
         Screen screenMenu;
+        Juego juego;
+        
 
         public Main()
         {
@@ -58,6 +62,12 @@ namespace dancingParticles
             
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch     =   new SpriteBatch(GraphicsDevice);
+
+            /*** LOAD ASSETS ***/
+            Properties.TexturaParticula = Content.Load<Texture2D>("mock/gui/particula");
+            Properties.TexturaNave = Content.Load<Texture2D>("mock/gui/nave");
+            Properties.texturaAtractor = Content.Load<Texture2D>("mock/gui/planeta");
+
             screenSplashTexture    =   Content.Load<Texture2D>("mock/gui/screens/Splash");
             screenMenuTexture      =   Content.Load<Texture2D>("mock/gui/screens/Menu");
             screenCreditsTexture   =   Content.Load<Texture2D>("mock/gui/screens/Credits");
@@ -68,6 +78,10 @@ namespace dancingParticles
             screenMenu = new Screen(screenMenuTexture, guiRectangeTexture);
             screenMenu.addButton(Properties.SCREEN_WITH/2 - 120, 130, 200, 35);
             screenMenu.addButton(Properties.SCREEN_WITH/2 - 120, 180, 200, 35);
+
+
+            /*** init juego ***/
+            juego = new Juego(screenMenuTexture, guiRectangeTexture);
         }
 
         /// <summary>
@@ -94,7 +108,7 @@ namespace dancingParticles
             {
                 Console.WriteLine("starting gameTime: " + gameTime);
                 stateManager.startInternalTimer(gameTime);
-                stateManager.loadNextScreen(1, 1, gameTime);
+                stateManager.loadNextScreen(2, 2, gameTime);
             }
             else
             {
@@ -106,10 +120,32 @@ namespace dancingParticles
                 }
                  * */
             }
+
+            /*** Alan: aqui puse el switch para saber si estoy en game,
+             * para poder actualizar las partículas
+             */
+            switch (stateManager.state)
+            {
+                case 2:
+                    updateGameScreen();
+                    break;
+                default:
+                    Console.WriteLine("state is not defined");
+                    break;
+            }
+
+
+
             base.Update(gameTime);
 
             //send over click events
            // if (MouseState.Equals(MouseState))
+        }
+
+        private void updateGameScreen()
+        {
+            /*** Hacer Update de Physics y cualquier cosa del juego ***/
+            juego.Update();
         }
 
 
@@ -136,6 +172,9 @@ namespace dancingParticles
         protected void drawGameScreen()
         {
             graphics.GraphicsDevice.Clear(Color.Yellow);
+            spriteBatch.Begin();
+            juego.Draw(spriteBatch);
+            spriteBatch.End();
         }
 
 
