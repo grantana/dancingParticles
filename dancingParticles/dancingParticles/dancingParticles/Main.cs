@@ -109,6 +109,7 @@ namespace dancingParticles
             base.Update(gameTime);
 
             //send over click events
+           // if (MouseState.Equals(MouseState))
         }
 
 
