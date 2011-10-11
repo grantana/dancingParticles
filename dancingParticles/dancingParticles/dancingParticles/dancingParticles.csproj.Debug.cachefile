@@ -1,1 +1,7 @@
 Content\splashScreen.xnb
+Content\mock\gui\screens\Credits.xnb
+Content\mock\gui\screens\Pause.xnb
+Content\mock\gui\screens\Splash.xnb
+Content\mock\gui\screens\Menu.xnb
+Content\mock\gui\Selector.xnb
+Content\mock\gui\rect.xnb

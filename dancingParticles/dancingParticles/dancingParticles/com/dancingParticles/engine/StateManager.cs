@@ -26,7 +26,7 @@ namespace com.dancingParticles.engine
         private float startTime;
         private float timeToNextState;
         private float currentStateTicks;
-        public float maxTicks;
+        public float maxTicks; 
 
 
 

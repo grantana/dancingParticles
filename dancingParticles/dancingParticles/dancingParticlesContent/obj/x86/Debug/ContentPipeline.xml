@@ -8,7 +8,61 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\splashScreen.xnb</Output>
-      <Time>2011-09-21T17:41:59-05:00</Time>
+      <Time>2011-09-25T18:39:12-05:00</Time>
+    </Item>
+    <Item>
+      <Source>mock\gui\screens\Credits.jpg</Source>
+      <Name>mock\gui\screens\Credits</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\screens\Credits.xnb</Output>
+      <Time>2011-10-11T00:15:10-05:00</Time>
+    </Item>
+    <Item>
+      <Source>mock\gui\screens\Pause.jpg</Source>
+      <Name>mock\gui\screens\Pause</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\screens\Pause.xnb</Output>
+      <Time>2011-10-11T00:15:10-05:00</Time>
+    </Item>
+    <Item>
+      <Source>mock\gui\screens\Splash.jpg</Source>
+      <Name>mock\gui\screens\Splash</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\screens\Splash.xnb</Output>
+      <Time>2011-10-11T00:15:10-05:00</Time>
+    </Item>
+    <Item>
+      <Source>mock\gui\screens\Menu.jpg</Source>
+      <Name>mock\gui\screens\Menu</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\screens\Menu.xnb</Output>
+      <Time>2011-10-11T00:27:52-05:00</Time>
+    </Item>
+    <Item>
+      <Source>mock\gui\Selector.jpg</Source>
+      <Name>mock\gui\Selector</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\Selector.xnb</Output>
+      <Time>2011-10-11T00:34:28-05:00</Time>
+    </Item>
+    <Item>
+      <Source>mock\gui\rect.PNG</Source>
+      <Name>mock\gui\rect</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\rect.xnb</Output>
+      <Time>2011-10-11T01:04:41-05:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

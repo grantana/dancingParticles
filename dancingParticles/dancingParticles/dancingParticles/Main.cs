@@ -8,7 +8,9 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
-using com.dancingParticles.engine; 
+using com.dancingParticles.engine;
+using com.dancingParticles.gui;
+using com.dancingParticles;
 
 namespace dancingParticles
 {
@@ -20,11 +22,16 @@ namespace dancingParticles
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         StateManager stateManager;
-        Texture2D splashLogo;
+        Texture2D screenSplashTexture, screenMenuTexture, screenPauseTexture, screenCreditsTexture, guiSelectorTexture, guiRectangeTexture;
+
+        Screen screenMenu;
+
         public Main()
         {
-            Console.WriteLine("Main init");
+            Console.WriteLine("Main init: ");
             graphics = new GraphicsDeviceManager(this);
+            graphics.PreferredBackBufferWidth   = Properties.SCREEN_WITH;
+            graphics.PreferredBackBufferHeight  = Properties.SCREEN_HEIGHT;
             Content.RootDirectory = "Content";
             stateManager = new StateManager(0);
         }
@@ -48,10 +55,19 @@ namespace dancingParticles
         /// </summary>
         protected override void LoadContent()
         {
+            
             // Create a new SpriteBatch, which can be used to draw textures.
-            spriteBatch = new SpriteBatch(GraphicsDevice);
-            splashLogo = Content.Load<Texture2D>("splashScreen");
+            spriteBatch     =   new SpriteBatch(GraphicsDevice);
+            screenSplashTexture    =   Content.Load<Texture2D>("mock/gui/screens/Splash");
+            screenMenuTexture      =   Content.Load<Texture2D>("mock/gui/screens/Menu");
+            screenCreditsTexture   =   Content.Load<Texture2D>("mock/gui/screens/Credits");
+            screenPauseTexture     =   Content.Load<Texture2D>("mock/gui/screens/Pause");
+            guiSelectorTexture     =   Content.Load<Texture2D>("mock/gui/Selector");
+            guiRectangeTexture     =   Content.Load<Texture2D>("mock/gui/rect");
             // TODO: use this.Content to load your game content here
+            screenMenu = new Screen(screenMenuTexture, guiRectangeTexture);
+            screenMenu.addButton(Properties.SCREEN_WITH/2 - 120, 130, 200, 35);
+            screenMenu.addButton(Properties.SCREEN_WITH/2 - 120, 180, 200, 35);
         }
 
         /// <summary>
@@ -78,17 +94,21 @@ namespace dancingParticles
             {
                 Console.WriteLine("starting gameTime: " + gameTime);
                 stateManager.startInternalTimer(gameTime);
-                stateManager.loadNextScreen(1, 5, gameTime);
+                stateManager.loadNextScreen(1, 1, gameTime);
             }
             else
             {
                 stateManager.tick(gameTime);
+                /*
                 if (stateManager.stageLoaded)
                 {
                     stateManager.loadNextScreen(stateManager.state+1, 2, gameTime);
                 }
+                 * */
             }
             base.Update(gameTime);
+
+            //send over click events
         }
 
 
@@ -98,15 +118,17 @@ namespace dancingParticles
             spriteBatch.Begin();
             Vector2 pos = new Vector2(0, 0);
             //Console.WriteLine(stateManager.getStateTicks() + ", " + stateManager.maxTicks + " :" + stateManager.getStateTicks() / (stateManager.maxTicks/5));
-            spriteBatch.Draw(splashLogo, pos, new Color(new Vector4(1, 1, 1, stateManager.getStateTicks()/ (stateManager.maxTicks/5) )    ));
+            spriteBatch.Draw(screenSplashTexture, pos, new Color(new Vector4(1, 1, 1, stateManager.getStateTicks()/ (stateManager.maxTicks/5) )    ));
             spriteBatch.End();
-
            // spriteBatch.Draw(splashLogo, new Vector2(0, 0), Color.White);
         }
 
         protected void drawMenuScreen()
         {
-            graphics.GraphicsDevice.Clear(Color.Red);
+            spriteBatch.Begin();
+            screenMenu.Draw(spriteBatch);
+            //any custom extra draw here
+            spriteBatch.End();
         }
 
 
