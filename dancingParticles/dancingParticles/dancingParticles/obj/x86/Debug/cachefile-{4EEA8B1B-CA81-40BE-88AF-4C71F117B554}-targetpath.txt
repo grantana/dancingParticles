@@ -11,3 +11,5 @@ Content\mock\gui\planeta.xnb
 Content\mock\gui\spaceship.xnb
 Content\mock\gui\particula.xnb
 Content\mock\gui\nave.xnb
+Content\mock\gui\screens\GameScreen.xnb
+Content\mock\gui\cursor.xnb

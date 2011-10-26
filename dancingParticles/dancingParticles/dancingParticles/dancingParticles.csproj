@@ -108,6 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="com\dancingParticles\engine\Atractor.cs" />
+    <Compile Include="com\dancingParticles\engine\MouseDP.cs" />
     <Compile Include="com\dancingParticles\engine\Nave.cs" />
     <Compile Include="com\dancingParticles\engine\Particle.cs" />
     <Compile Include="com\dancingParticles\engine\Physics.cs" />

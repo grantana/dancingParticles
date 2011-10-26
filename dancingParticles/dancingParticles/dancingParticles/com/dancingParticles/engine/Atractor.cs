@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace com.dancingParticles.engine
 {
-    class Atractor
+    public class Atractor
     {
         /************************************
          * Aqui se pone divertido.
@@ -46,6 +46,15 @@ namespace com.dancingParticles.engine
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(textura,rect,Color.White);
+        }
+
+        public void setPosicion(Vector2 nPosicion)
+        {
+            this.posicion = nPosicion;
+            int deltaX = Properties.sizeAtractor/2;
+            int deltaY = Properties.sizeAtractor/2;
+            rect.X = (int)posicion.X - deltaX;
+            rect.Y = (int)posicion.Y - deltaY;
         }
     }
 }

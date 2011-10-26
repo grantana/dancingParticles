@@ -17,3 +17,5 @@ Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock
 Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\spaceship.xnb
 Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\particula.xnb
 Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\nave.xnb
+Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\screens\GameScreen.xnb
+Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\cursor.xnb

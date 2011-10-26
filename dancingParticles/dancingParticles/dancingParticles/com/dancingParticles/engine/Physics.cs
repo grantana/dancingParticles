@@ -41,7 +41,7 @@ namespace com.dancingParticles.engine
         public void agregarParticula(Particle p)
         {
             /*** agregar la particula a la lista ***/
-            if (particulas.Count < 2000)
+            if (particulas.Count < 5000)
             {
                 particulas.Add(p);
             }
@@ -96,5 +96,23 @@ namespace com.dancingParticles.engine
             vel.Y -= ay / p.Mass;
             p.Velocity = vel;
         }
+
+        public Atractor getAtractorUnderMouse(Vector2 mousePos)
+        {
+            //min distance from mouse to atractor
+            float minDistance = Properties.sizeAtractor;
+
+            foreach (Atractor a in atractores)
+            {
+                //get distance from mouse to attractor
+                float dis = Vector2.Distance(a.Posicion, mousePos);
+                if (dis <= minDistance)
+                    return a;
+
+            }
+            return null;
+
+        }
+
     }
 }

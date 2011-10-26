@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using com.dancingParticles.gui;
 using com.dancingParticles.engine;
+using Microsoft.Xna.Framework.Input;
 
 namespace com.dancingParticles.gui.screens
 {
@@ -33,10 +34,21 @@ namespace com.dancingParticles.gui.screens
             fisica.agregarAtractor(new Vector2(700, 600), -300);
         }
 
-        public void Update()
+        public void Update(MouseState mouse)
         {
             nave.Update();
             fisica.Update();
+            //check user Drag Drop Events
+            if (mouse.LeftButton == ButtonState.Pressed)
+            {
+                Atractor pressedAtractor = fisica.getAtractorUnderMouse(new Vector2(mouse.X, mouse.Y));
+                if (pressedAtractor != null)
+                {
+                    //USER IS PRESSING PLANET
+                    pressedAtractor.setPosicion(new Vector2(mouse.X, mouse.Y));
+                }
+            }
+
         }
 
 

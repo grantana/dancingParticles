@@ -23,11 +23,15 @@ namespace dancingParticles
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         StateManager stateManager;
-        Texture2D screenSplashTexture, screenMenuTexture, screenPauseTexture, screenCreditsTexture, guiSelectorTexture, guiRectangeTexture;
+        Texture2D screenSplashTexture, screenMenuTexture, screenPauseTexture, screenCreditsTexture, screenGameTexture, guiSelectorTexture, guiRectangeTexture, mouseTexture;
 
         /*** Pantallas ***/
         Screen screenMenu;
         Juego juego;
+        
+
+        /***** UI ******/
+        MouseDP mouse;
         
 
         public Main()
@@ -71,9 +75,11 @@ namespace dancingParticles
             screenSplashTexture    =   Content.Load<Texture2D>("mock/gui/screens/Splash");
             screenMenuTexture      =   Content.Load<Texture2D>("mock/gui/screens/Menu");
             screenCreditsTexture   =   Content.Load<Texture2D>("mock/gui/screens/Credits");
+            screenGameTexture      =   Content.Load<Texture2D>("mock/gui/screens/GameScreen");
             screenPauseTexture     =   Content.Load<Texture2D>("mock/gui/screens/Pause");
             guiSelectorTexture     =   Content.Load<Texture2D>("mock/gui/Selector");
             guiRectangeTexture     =   Content.Load<Texture2D>("mock/gui/rect");
+            mouseTexture           =   Content.Load<Texture2D>("mock/gui/cursor");
             // TODO: use this.Content to load your game content here
             screenMenu = new Screen(screenMenuTexture, guiRectangeTexture);
             screenMenu.addButton(Properties.SCREEN_WITH/2 - 120, 130, 200, 35);
@@ -81,7 +87,8 @@ namespace dancingParticles
 
 
             /*** init juego ***/
-            juego = new Juego(screenMenuTexture, guiRectangeTexture);
+            juego = new Juego(screenGameTexture, guiRectangeTexture);
+            mouse = new MouseDP(mouseTexture, Vector2.Zero);
         }
 
         /// <summary>
@@ -140,12 +147,15 @@ namespace dancingParticles
 
             //send over click events
            // if (MouseState.Equals(MouseState))
+
+            //UPDATE MOUSE POS
+            mouse.pos = new Vector2(Mouse.GetState().X, Mouse.GetState().Y);
         }
 
         private void updateGameScreen()
         {
             /*** Hacer Update de Physics y cualquier cosa del juego ***/
-            juego.Update();
+            juego.Update(Mouse.GetState());
         }
 
 
@@ -174,6 +184,7 @@ namespace dancingParticles
             graphics.GraphicsDevice.Clear(Color.Yellow);
             spriteBatch.Begin();
             juego.Draw(spriteBatch);
+            mouse.Draw(spriteBatch);
             spriteBatch.End();
         }
 
@@ -211,7 +222,7 @@ namespace dancingParticles
             }
 
             // TODO: Add your drawing code here
-
+          
             base.Draw(gameTime);
         }
     }
