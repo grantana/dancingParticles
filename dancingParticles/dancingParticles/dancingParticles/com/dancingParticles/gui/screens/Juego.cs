@@ -18,7 +18,8 @@ namespace com.dancingParticles.gui.screens
 
         private Physics fisica;
         private Nave nave;
-
+        private Boolean pressedFlag = false;
+        private Atractor lastPressedAtractor;
 
         public Juego(Texture2D back, Texture2D rect)
         {
@@ -30,7 +31,7 @@ namespace com.dancingParticles.gui.screens
 
 
             /*** DEBUG ***/
-            fisica.agregarAtractor(new Vector2(350, 150), 300);
+            fisica.agregarAtractor(new Vector2(350, 150), 600);
             fisica.agregarAtractor(new Vector2(700, 600), -300);
         }
 
@@ -41,13 +42,25 @@ namespace com.dancingParticles.gui.screens
             //check user Drag Drop Events
             if (mouse.LeftButton == ButtonState.Pressed)
             {
-                Atractor pressedAtractor = fisica.getAtractorUnderMouse(new Vector2(mouse.X, mouse.Y));
-                if (pressedAtractor != null)
+                if (pressedFlag)
                 {
+                     lastPressedAtractor.setPosicion(new Vector2(mouse.X, mouse.Y));
+                }
+
+                Atractor pressedAtractor = fisica.getAtractorUnderMouse(new Vector2(mouse.X, mouse.Y));
+                if (pressedAtractor != null && !pressedFlag)
+                {
+                    lastPressedAtractor = pressedAtractor;
                     //USER IS PRESSING PLANET
-                    pressedAtractor.setPosicion(new Vector2(mouse.X, mouse.Y));
+                    pressedFlag = true;
+                   
                 }
             }
+            else
+            {
+                pressedFlag = false;
+            }
+
 
         }
 

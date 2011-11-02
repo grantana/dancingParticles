@@ -8,7 +8,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\splashScreen.xnb</Output>
-      <Time>2011-09-25T18:39:12-05:00</Time>
+      <Time>2011-09-25T17:39:12-06:00</Time>
     </Item>
     <Item>
       <Source>mock\gui\screens\Credits.jpg</Source>
@@ -17,7 +17,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\screens\Credits.xnb</Output>
-      <Time>2011-10-11T01:37:10-05:00</Time>
+      <Time>2011-11-01T19:25:44-06:00</Time>
     </Item>
     <Item>
       <Source>mock\gui\screens\Pause.jpg</Source>
@@ -26,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\screens\Pause.xnb</Output>
-      <Time>2011-10-11T01:37:10-05:00</Time>
+      <Time>2011-11-01T19:25:47-06:00</Time>
     </Item>
     <Item>
       <Source>mock\gui\screens\Splash.jpg</Source>
@@ -35,7 +35,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\screens\Splash.xnb</Output>
-      <Time>2011-10-11T01:37:10-05:00</Time>
+      <Time>2011-11-01T19:25:48-06:00</Time>
     </Item>
     <Item>
       <Source>mock\gui\screens\Menu.jpg</Source>
@@ -44,7 +44,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\screens\Menu.xnb</Output>
-      <Time>2011-10-11T01:37:10-05:00</Time>
+      <Time>2011-11-01T19:25:47-06:00</Time>
     </Item>
     <Item>
       <Source>mock\gui\Selector.jpg</Source>
@@ -53,7 +53,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\Selector.xnb</Output>
-      <Time>2011-10-11T01:37:10-05:00</Time>
+      <Time>2011-11-01T19:26:33-06:00</Time>
     </Item>
     <Item>
       <Source>mock\gui\rect.PNG</Source>
@@ -62,7 +62,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\rect.xnb</Output>
-      <Time>2011-10-11T01:37:10-05:00</Time>
+      <Time>2011-11-01T19:26:33-06:00</Time>
     </Item>
     <Item>
       <Source>mock\gui\hoyoNegro.png</Source>
@@ -71,7 +71,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\hoyoNegro.xnb</Output>
-      <Time>2011-09-24T16:47:24-05:00</Time>
+      <Time>2011-11-01T19:26:33-06:00</Time>
     </Item>
     <Item>
       <Source>mock\gui\particulaGlow2.png</Source>
@@ -80,7 +80,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\particulaGlow2.xnb</Output>
-      <Time>2011-09-24T16:47:24-05:00</Time>
+      <Time>2011-11-01T19:26:33-06:00</Time>
     </Item>
     <Item>
       <Source>mock\gui\planeta.png</Source>
@@ -89,7 +89,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\planeta.xnb</Output>
-      <Time>2011-09-24T16:47:24-05:00</Time>
+      <Time>2011-11-01T19:26:33-06:00</Time>
     </Item>
     <Item>
       <Source>mock\gui\spaceship.jpg</Source>
@@ -98,7 +98,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\spaceship.xnb</Output>
-      <Time>2011-09-24T16:47:24-05:00</Time>
+      <Time>2011-11-01T19:26:33-06:00</Time>
     </Item>
     <Item>
       <Source>mock\gui\particula.png</Source>
@@ -107,7 +107,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\particula.xnb</Output>
-      <Time>2011-09-24T16:47:24-05:00</Time>
+      <Time>2011-11-01T19:26:33-06:00</Time>
     </Item>
     <Item>
       <Source>mock\gui\nave.png</Source>
@@ -116,7 +116,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\nave.xnb</Output>
-      <Time>2011-09-24T16:47:24-05:00</Time>
+      <Time>2011-11-01T19:26:33-06:00</Time>
     </Item>
     <Item>
       <Source>mock\gui\screens\GameScreen.jpg</Source>
@@ -125,7 +125,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\screens\GameScreen.xnb</Output>
-      <Time>2011-10-26T16:00:29-05:00</Time>
+      <Time>2011-11-01T19:25:45-06:00</Time>
     </Item>
     <Item>
       <Source>mock\gui\cursor.png</Source>
@@ -134,7 +134,61 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\cursor.xnb</Output>
-      <Time>2011-10-26T16:40:57-05:00</Time>
+      <Time>2011-11-01T19:26:33-06:00</Time>
+    </Item>
+    <Item>
+      <Source>mock\gui\screens\Win.jpg</Source>
+      <Name>mock\gui\screens\Win</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\screens\Win.xnb</Output>
+      <Time>2011-11-01T19:25:48-06:00</Time>
+    </Item>
+    <Item>
+      <Source>mock\gui\Atractors.png</Source>
+      <Name>mock\gui\Atractors</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\Atractors.xnb</Output>
+      <Time>2011-11-01T19:26:31-06:00</Time>
+    </Item>
+    <Item>
+      <Source>mock\gui\Atractors1.png</Source>
+      <Name>mock\gui\Atractors1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\Atractors1.xnb</Output>
+      <Time>2011-11-01T19:26:31-06:00</Time>
+    </Item>
+    <Item>
+      <Source>mock\gui\Atractors2.png</Source>
+      <Name>mock\gui\Atractors2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\Atractors2.xnb</Output>
+      <Time>2011-11-01T19:26:31-06:00</Time>
+    </Item>
+    <Item>
+      <Source>mock\gui\Atractors4.png</Source>
+      <Name>mock\gui\Atractors4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\Atractors4.xnb</Output>
+      <Time>2011-11-01T19:26:31-06:00</Time>
+    </Item>
+    <Item>
+      <Source>mock\gui\objetivo.png</Source>
+      <Name>mock\gui\objetivo</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\objetivo.xnb</Output>
+      <Time>2011-11-01T19:26:33-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -150,31 +204,31 @@
     <Assemblies>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
-        <Value>2010-08-23T12:41:18-05:00</Value>
+        <Value>2010-08-23T11:41:18-06:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
-        <Value>2010-08-23T12:41:18-05:00</Value>
+        <Value>2010-08-23T11:41:18-06:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
-        <Value>2010-08-23T12:41:18-05:00</Value>
+        <Value>2010-08-23T11:41:18-06:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
-        <Value>2010-08-23T12:41:18-05:00</Value>
+        <Value>2010-08-23T11:41:18-06:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
-        <Value>2010-08-23T12:41:18-05:00</Value>
+        <Value>2010-08-23T11:41:18-06:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
-        <Value>2010-08-23T12:41:18-05:00</Value>
+        <Value>2010-08-23T11:41:18-06:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2011-08-18T09:55:10.2265625-05:00</Value>
+        <Value>2011-08-18T08:55:10.2265625-06:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

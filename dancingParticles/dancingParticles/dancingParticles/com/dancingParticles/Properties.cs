@@ -11,6 +11,7 @@ namespace com.dancingParticles
     {
         public static int SCREEN_WITH   = 1280;
         public static int SCREEN_HEIGHT = 720;
+        public static double aleatoriedadParticulas = 0.05;
         public static Vector2[] GUI_SELECTOR_STATE1_POS = {new Vector2(100, 100), new Vector2(100, 200)};
 
         /*** Particulas ***/
@@ -32,11 +33,32 @@ namespace com.dancingParticles
         }
 
         /*** Atractor ***/
-        public static Texture2D texturaAtractor;
-        public static Texture2D TexturaAtractor
+        public static Texture2D texturaAtractor1;
+        public static Texture2D TexturaAtractor1
         {
-            get { return texturaAtractor; }
-            set { texturaAtractor = value;}
+            get { return texturaAtractor1; }
+            set { texturaAtractor1 = value;}
+        }
+
+        public static Texture2D texturaAtractor2;
+        public static Texture2D TexturaAtractor2
+        {
+            get { return texturaAtractor2; }
+            set { texturaAtractor2 = value; }
+        }
+
+        public static Texture2D texturaAtractor3;
+        public static Texture2D TexturaAtractor3
+        {
+            get { return texturaAtractor3; }
+            set { texturaAtractor3 = value; }
+        }
+
+        public static Texture2D texturaAtractor4;
+        public static Texture2D TexturaAtractor4
+        {
+            get { return texturaAtractor4; }
+            set { texturaAtractor4 = value; }
         }
         public static int sizeAtractor = 100;
     }

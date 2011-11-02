@@ -22,22 +22,26 @@ namespace com.dancingParticles.engine
         private float angulo = 0; // Dirección del emisor, el angulo
         private float fuerza = 2.5f; // Potencia con la que expulsa particulas
 
+
         public Nave()
         {
             fisica = Physics.Instance;
             random = new Random();
             direccion = calculaDireccion();
+            textura = Properties.texturaNave;
         }
 
         public void Update()
         {
             // Lanzar partículas
-            Particle p = new Particle(direccion, random.Next(Properties.minSize, Properties.maxSize));
+            Vector2 direccionRandom = new Vector2((float)(direccion.X + (random.NextDouble() - 0.5) * Properties.aleatoriedadParticulas), (float)(direccion.Y + (random.NextDouble() - 0.5) * Properties.aleatoriedadParticulas));
+            Particle p = new Particle(direccionRandom, random.Next(Properties.minSize, Properties.maxSize));
             fisica.agregarParticula(p);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
+            spriteBatch.Draw(textura, posicion, Color.White);
             //spriteBatch.Draw();
         }
 

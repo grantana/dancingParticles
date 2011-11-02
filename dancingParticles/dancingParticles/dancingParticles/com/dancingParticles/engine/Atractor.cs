@@ -33,7 +33,15 @@ namespace com.dancingParticles.engine
 
             int _size = Properties.sizeAtractor;
 
-            textura = Properties.texturaAtractor;
+            //dependiendo de la masa usar texturas diferentes
+            if (masa < 0)
+            {
+                textura = Properties.texturaAtractor1;
+            }
+            else
+            {
+                textura = Properties.texturaAtractor2;
+            }
             rect = new Rectangle((int)posicion.X - _size / 2, (int)posicion.Y - _size / 2, _size, _size);
             /*** INTENTAR PONER EL TAMAÑO DEPENDIENTE DE LA MASA ***/
         }

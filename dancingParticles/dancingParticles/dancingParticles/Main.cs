@@ -69,8 +69,11 @@ namespace dancingParticles
 
             /*** LOAD ASSETS ***/
             Properties.TexturaParticula = Content.Load<Texture2D>("mock/gui/particula");
-            Properties.TexturaNave = Content.Load<Texture2D>("mock/gui/nave");
-            Properties.texturaAtractor = Content.Load<Texture2D>("mock/gui/planeta");
+            Properties.TexturaNave      = Content.Load<Texture2D>("mock/gui/nave");
+            Properties.texturaAtractor1 = Content.Load<Texture2D>("mock/gui/Atractors");
+            Properties.texturaAtractor2 = Content.Load<Texture2D>("mock/gui/Atractors1");
+            Properties.texturaAtractor3 = Content.Load<Texture2D>("mock/gui/Atractors2");
+            Properties.texturaAtractor4 = Content.Load<Texture2D>("mock/gui/Atractors4");
 
             screenSplashTexture    =   Content.Load<Texture2D>("mock/gui/screens/Splash");
             screenMenuTexture      =   Content.Load<Texture2D>("mock/gui/screens/Menu");

@@ -100,7 +100,7 @@ namespace com.dancingParticles.engine
         public Atractor getAtractorUnderMouse(Vector2 mousePos)
         {
             //min distance from mouse to atractor
-            float minDistance = Properties.sizeAtractor;
+            float minDistance = Properties.sizeAtractor*.5f;
 
             foreach (Atractor a in atractores)
             {
