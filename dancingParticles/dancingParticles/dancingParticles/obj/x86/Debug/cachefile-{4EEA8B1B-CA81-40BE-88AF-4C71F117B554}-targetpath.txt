@@ -19,3 +19,5 @@ Content\mock\gui\Atractors1.xnb
 Content\mock\gui\Atractors2.xnb
 Content\mock\gui\Atractors4.xnb
 Content\mock\gui\objetivo.xnb
+Content\mock\gui\botones\botonHome.xnb
+Content\mock\gui\botones\botonReload.xnb

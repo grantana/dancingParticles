@@ -25,3 +25,5 @@ Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock
 Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\Atractors2.xnb
 Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\Atractors4.xnb
 Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\objetivo.xnb
+Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\botones\botonHome.xnb
+Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\botones\botonReload.xnb

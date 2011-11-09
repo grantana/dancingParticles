@@ -13,9 +13,16 @@ namespace com.dancingParticles
         public static int SCREEN_HEIGHT = 720;
         public static double aleatoriedadParticulas = 0.05;
         public static Vector2[] GUI_SELECTOR_STATE1_POS = {new Vector2(100, 100), new Vector2(100, 200)};
+        public static int maxEnergia = 100;
+        public static int radioObjetivo = 100;
+
+        /****BOTONES****/
+        public static Texture2D texturaBotonHome;
+        public static Texture2D texturaBotonReload;
 
         /*** Particulas ***/
         public static Texture2D texturaParticula;
+        public static Texture2D texturaObjetivo;
         public static Texture2D TexturaParticula
         {
             get { return texturaParticula; }

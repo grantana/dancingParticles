@@ -28,11 +28,12 @@ namespace com.dancingParticles.gui.screens
             this.rect = rect;
             fisica = Physics.Instance;
             nave = new Nave();
+            /****GUI****/
+            addButton(Properties.SCREEN_WITH - 200 + 10, 10, 50, 50, Properties.texturaBotonHome, 1);
+            addButton(Properties.SCREEN_WITH - 200 + 100, 10, 50, 50, Properties.texturaBotonReload, 2);
 
-
-            /*** DEBUG ***/
-            fisica.agregarAtractor(new Vector2(350, 150), 600);
-            fisica.agregarAtractor(new Vector2(700, 600), -300);
+            setElements();
+           
         }
 
         public void Update(MouseState mouse)
@@ -42,6 +43,18 @@ namespace com.dancingParticles.gui.screens
             //check user Drag Drop Events
             if (mouse.LeftButton == ButtonState.Pressed)
             {
+                //CHECK BUTTONS
+                int clickedID = getClickedID(new Vector2(mouse.X, mouse.Y));
+                if (clickedID >= 0)
+                {
+                    if (clickedID == 2)
+                    {
+                        Reset();
+                    }
+                     
+                    Console.WriteLine("BUTTON PRESSED: clickedID: "+clickedID);
+                    //APACURRO BOTONES 
+                }
                 if (pressedFlag)
                 {
                      lastPressedAtractor.setPosicion(new Vector2(mouse.X, mouse.Y));
@@ -64,6 +77,22 @@ namespace com.dancingParticles.gui.screens
 
         }
 
+        public void Reset()
+        {
+            fisica.Reset();
+            setElements();
+        }
+
+        public void setElements()
+        {
+           
+
+            /*** DEBUG ***/
+            fisica.agregarAtractor(new Vector2(350, 150), 600);
+            fisica.agregarAtractor(new Vector2(700, 600), -300);
+            fisica.agregarObjetivo(new Vector2(900, 500), Properties.maxEnergia);
+        }
+
 
         public override void Draw(SpriteBatch spriteBatch)
         {
@@ -77,7 +106,7 @@ namespace com.dancingParticles.gui.screens
             //Draw buttons in case we have any
             foreach (Button button in clickableElements)
             {
-                button.drawRectangle(spriteBatch, rect);
+                button.drawTexture(spriteBatch);
             }
         }
     }

@@ -13,20 +13,27 @@ namespace com.dancingParticles.gui
     //Simple Button class for GUI elements
     public class Button
     {
-        public int posX, posY, height, width;
+        public int posX, posY, height, width, ID;
+
         private Rectangle rect;
-        public Button(int posX, int posY, int width, int height)
+        private Texture2D textura;
+        
+        public Button(int posX, int posY, int width, int height, Texture2D textura, int ID)
         {
             this.posX = posX;
             this.posY = posY;
             this.height = height;
             this.width = width;
+            this.textura = textura;
+            this.ID = ID;
             rect = new Rectangle(posX, posY, width, height);
         }
 
+
+
         public bool checkHit(Vector2 inputClick)
         {
-            if (inputClick.X > posX && inputClick.Y < posX + width && inputClick.Y > posY && inputClick.Y < posY + height)
+            if (inputClick.X > posX && inputClick.X < posX + width && inputClick.Y > posY && inputClick.Y < posY + height)
                 return true;
             return false;
         }
@@ -34,6 +41,11 @@ namespace com.dancingParticles.gui
         public void drawRectangle(SpriteBatch spriteBatch, Texture2D rectTexture) 
         {
             spriteBatch.Draw(rectTexture, rect, Color.Red);
+        }
+
+        public void drawTexture(SpriteBatch spriteBatch)
+        {
+            spriteBatch.Draw(textura, rect, Color.White);
         }
 
 

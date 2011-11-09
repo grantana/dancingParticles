@@ -110,6 +110,7 @@
     <Compile Include="com\dancingParticles\engine\Atractor.cs" />
     <Compile Include="com\dancingParticles\engine\MouseDP.cs" />
     <Compile Include="com\dancingParticles\engine\Nave.cs" />
+    <Compile Include="com\dancingParticles\engine\Objetivo.cs" />
     <Compile Include="com\dancingParticles\engine\Particle.cs" />
     <Compile Include="com\dancingParticles\gui\Physics.cs" />
     <Compile Include="com\dancingParticles\gui\Button.cs" />

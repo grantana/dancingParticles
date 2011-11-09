@@ -190,6 +190,24 @@
       <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\objetivo.xnb</Output>
       <Time>2011-11-01T20:04:55-06:00</Time>
     </Item>
+    <Item>
+      <Source>mock\gui\botones\botonHome.jpg</Source>
+      <Name>mock\gui\botones\botonHome</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\botones\botonHome.xnb</Output>
+      <Time>2011-11-09T17:00:28-06:00</Time>
+    </Item>
+    <Item>
+      <Source>mock\gui\botones\botonReload.jpg</Source>
+      <Name>mock\gui\botones\botonReload</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\botones\botonReload.xnb</Output>
+      <Time>2011-11-09T17:01:38-06:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

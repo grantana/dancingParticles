@@ -74,6 +74,10 @@ namespace dancingParticles
             Properties.texturaAtractor2 = Content.Load<Texture2D>("mock/gui/Atractors1");
             Properties.texturaAtractor3 = Content.Load<Texture2D>("mock/gui/Atractors2");
             Properties.texturaAtractor4 = Content.Load<Texture2D>("mock/gui/Atractors4");
+            Properties.texturaObjetivo  = Content.Load<Texture2D>("mock/gui/objetivo");
+            Properties.texturaBotonHome = Content.Load<Texture2D>("mock/gui/botones/botonHome");
+            Properties.texturaBotonReload = Content.Load<Texture2D>("mock/gui/botones/botonReload");
+
 
             screenSplashTexture    =   Content.Load<Texture2D>("mock/gui/screens/Splash");
             screenMenuTexture      =   Content.Load<Texture2D>("mock/gui/screens/Menu");
@@ -85,8 +89,8 @@ namespace dancingParticles
             mouseTexture           =   Content.Load<Texture2D>("mock/gui/cursor");
             // TODO: use this.Content to load your game content here
             screenMenu = new Screen(screenMenuTexture, guiRectangeTexture);
-            screenMenu.addButton(Properties.SCREEN_WITH/2 - 120, 130, 200, 35);
-            screenMenu.addButton(Properties.SCREEN_WITH/2 - 120, 180, 200, 35);
+            //screenMenu.addButton(Properties.SCREEN_WITH/2 - 120, 130, 200, 35);
+            //screenMenu.addButton(Properties.SCREEN_WITH/2 - 120, 180, 200, 35);
 
 
             /*** init juego ***/
@@ -154,7 +158,7 @@ namespace dancingParticles
             //UPDATE MOUSE POS
             mouse.pos = new Vector2(Mouse.GetState().X, Mouse.GetState().Y);
         }
-
+        
         private void updateGameScreen()
         {
             /*** Hacer Update de Physics y cualquier cosa del juego ***/

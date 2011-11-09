@@ -37,6 +37,9 @@ namespace com.dancingParticles.engine
             Vector2 direccionRandom = new Vector2((float)(direccion.X + (random.NextDouble() - 0.5) * Properties.aleatoriedadParticulas), (float)(direccion.Y + (random.NextDouble() - 0.5) * Properties.aleatoriedadParticulas));
             Particle p = new Particle(direccionRandom, random.Next(Properties.minSize, Properties.maxSize));
             fisica.agregarParticula(p);
+            direccionRandom = new Vector2((float)(direccion.X + (random.NextDouble() - 0.5) * Properties.aleatoriedadParticulas), (float)(direccion.Y + (random.NextDouble() - 0.5) * Properties.aleatoriedadParticulas));
+            p = new Particle(direccionRandom, random.Next(Properties.minSize, Properties.maxSize));
+            fisica.agregarParticula(p);
         }
 
         public void Draw(SpriteBatch spriteBatch)

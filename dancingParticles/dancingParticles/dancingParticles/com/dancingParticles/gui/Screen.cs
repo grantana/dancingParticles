@@ -45,10 +45,25 @@ namespace com.dancingParticles.gui
             } 
         }
 
-
-        public void addButton(int posX, int posY, int width, int height)
+        //REGRESA EL ID DE LOS BOTONES SI NO TIENE REGRESA -1
+        public int getClickedID(Vector2 inputClick)
         {
-            clickableElements.Add(new Button(posX, posY, width, height));      
+            //Draw buttons in case we have any
+            foreach (Button button in clickableElements)
+            {
+                if (button.checkHit(inputClick))
+                {
+                    return button.ID;
+                }
+            } 
+            return -1;
+        }
+
+
+
+        public void addButton(int posX, int posY, int width, int height, Texture2D texturaBT, int btID)
+        {
+            clickableElements.Add(new Button(posX, posY, width, height, texturaBT, btID));      
         }
 
         

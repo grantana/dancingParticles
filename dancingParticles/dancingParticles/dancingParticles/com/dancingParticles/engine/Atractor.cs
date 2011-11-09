@@ -22,8 +22,10 @@ namespace com.dancingParticles.engine
         
         private Vector2 posicion;
         private int mass;
+        private float radio;
 
         public Vector2 Posicion { get { return posicion; } }
+        public float Radio { get { return radio; } }
         public int Mass { get { return mass; } }
 
         public Atractor(Vector2 posicion, int masa)
@@ -32,6 +34,7 @@ namespace com.dancingParticles.engine
             this.mass = masa;
 
             int _size = Properties.sizeAtractor;
+            this.radio = _size / 2;
 
             //dependiendo de la masa usar texturas diferentes
             if (masa < 0)
