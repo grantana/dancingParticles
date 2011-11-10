@@ -17,7 +17,7 @@ namespace com.dancingParticles.engine
         private List<Particle> particulas;
         private List<Atractor> atractores;
         private Objetivo objetivo;
-
+        public float acumEnergy;
         public Physics() { init(); }
 
         public static Physics Instance
@@ -37,6 +37,7 @@ namespace com.dancingParticles.engine
             /*** inicializar ***/
             particulas = new List<Particle>();
             atractores = new List<Atractor>();
+            acumEnergy = Properties.startAcumEnergy;
         }
 
         public void agregarParticula(Particle p)
@@ -84,10 +85,12 @@ namespace com.dancingParticles.engine
                         particulas.Remove(p);
                         i--;
                     }
-                    /*else if (checkEdge(p)) {
+                    if (targetImpact(objetivo, p))
+                    {
                         particulas.Remove(p);
                         i--;
-                    }*/
+                        acumEnergy += Properties.deltaAcumEnergy;
+                    }
                 }
             }
         }
@@ -131,6 +134,19 @@ namespace com.dancingParticles.engine
             return false;
         }
 
+        private bool targetImpact(Objetivo a, Particle p)
+        {
+            float dx = p.Position.X - a.Position.X;
+            float dy = p.Position.Y - a.Position.Y;
+            float distSQ = dx * dx + dy * dy;
+            float dist = (float)Math.Sqrt(distSQ);
+            if (dist <= Properties.radioObjetivo)
+            {
+                return true;
+            }
+            return false;
+        }
+
 
          private bool checkEdge(Particle p)
         {
@@ -166,6 +182,7 @@ namespace com.dancingParticles.engine
         {
             atractores.Clear();
             particulas.Clear();
+            acumEnergy = Properties.startAcumEnergy;
         }
 
 

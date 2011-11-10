@@ -13,7 +13,7 @@ namespace com.dancingParticles.engine
          */
         /*** GUI ***/
         private Texture2D textura;
-        private Vector2 posicion;
+        public Vector2 posicion;
 
 
         private Physics fisica;
@@ -21,7 +21,7 @@ namespace com.dancingParticles.engine
         private Vector2 direccion; // Hacia donde apunta su "emisor"
         private float angulo = 0; // Dirección del emisor, el angulo
         private float fuerza = 2.5f; // Potencia con la que expulsa particulas
-
+        public float energia = Properties.startShipEnergy;
 
         public Nave()
         {
@@ -37,9 +37,8 @@ namespace com.dancingParticles.engine
             Vector2 direccionRandom = new Vector2((float)(direccion.X + (random.NextDouble() - 0.5) * Properties.aleatoriedadParticulas), (float)(direccion.Y + (random.NextDouble() - 0.5) * Properties.aleatoriedadParticulas));
             Particle p = new Particle(direccionRandom, random.Next(Properties.minSize, Properties.maxSize));
             fisica.agregarParticula(p);
-            direccionRandom = new Vector2((float)(direccion.X + (random.NextDouble() - 0.5) * Properties.aleatoriedadParticulas), (float)(direccion.Y + (random.NextDouble() - 0.5) * Properties.aleatoriedadParticulas));
-            p = new Particle(direccionRandom, random.Next(Properties.minSize, Properties.maxSize));
-            fisica.agregarParticula(p);
+            //DISMUIR LA ENERGIA DE LA NAVE
+            energia -= Properties.energyDelta;
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -55,5 +54,11 @@ namespace com.dancingParticles.engine
             float _y = (float)(Math.Sin(angulo * Math.PI / 180)*fuerza);
             return new Vector2(_x, _y);
         }
+
+        public void Reset()
+        {
+            energia = Properties.startShipEnergy;
+        }
+
     }
 }

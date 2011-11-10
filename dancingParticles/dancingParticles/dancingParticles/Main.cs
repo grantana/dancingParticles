@@ -68,16 +68,18 @@ namespace dancingParticles
             spriteBatch     =   new SpriteBatch(GraphicsDevice);
 
             /*** LOAD ASSETS ***/
-            Properties.TexturaParticula = Content.Load<Texture2D>("mock/gui/particula");
-            Properties.TexturaNave      = Content.Load<Texture2D>("mock/gui/nave");
-            Properties.texturaAtractor1 = Content.Load<Texture2D>("mock/gui/Atractors");
-            Properties.texturaAtractor2 = Content.Load<Texture2D>("mock/gui/Atractors1");
-            Properties.texturaAtractor3 = Content.Load<Texture2D>("mock/gui/Atractors2");
-            Properties.texturaAtractor4 = Content.Load<Texture2D>("mock/gui/Atractors4");
-            Properties.texturaObjetivo  = Content.Load<Texture2D>("mock/gui/objetivo");
-            Properties.texturaBotonHome = Content.Load<Texture2D>("mock/gui/botones/botonHome");
-            Properties.texturaBotonReload = Content.Load<Texture2D>("mock/gui/botones/botonReload");
-
+            Properties.TexturaParticula     = Content.Load<Texture2D>("mock/gui/particula");
+            Properties.TexturaNave          = Content.Load<Texture2D>("mock/gui/nave");
+            Properties.texturaAtractor1     = Content.Load<Texture2D>("mock/gui/Atractors");
+            Properties.texturaAtractor2     = Content.Load<Texture2D>("mock/gui/Atractors1");
+            Properties.texturaAtractor3     = Content.Load<Texture2D>("mock/gui/Atractors2");
+            Properties.texturaAtractor4     = Content.Load<Texture2D>("mock/gui/Atractors4");
+            Properties.texturaObjetivo      = Content.Load<Texture2D>("mock/gui/objetivo");
+            Properties.texturaBotonHome     = Content.Load<Texture2D>("mock/gui/botones/botonHome");
+            Properties.texturaBotonReload   = Content.Load<Texture2D>("mock/gui/botones/botonReload");
+            Properties.texturaUIBarras      = Content.Load<Texture2D>("mock/gui/barras");
+            Properties.texturaUIFill1       = Content.Load<Texture2D>("mock/gui/barrasLaserRelleno");
+            Properties.texturaUIFill2       = Content.Load<Texture2D>("mock/gui/barrasRellenoObjetivo");
 
             screenSplashTexture    =   Content.Load<Texture2D>("mock/gui/screens/Splash");
             screenMenuTexture      =   Content.Load<Texture2D>("mock/gui/screens/Menu");
@@ -144,7 +146,7 @@ namespace dancingParticles
                     updateGameScreen();
                     break;
                 default:
-                    Console.WriteLine("state is not defined");
+                    //Console.WriteLine("state is not defined");
                     break;
             }
 

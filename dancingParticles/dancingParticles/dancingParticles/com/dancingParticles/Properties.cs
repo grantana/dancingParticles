@@ -15,6 +15,20 @@ namespace com.dancingParticles
         public static Vector2[] GUI_SELECTOR_STATE1_POS = {new Vector2(100, 100), new Vector2(100, 200)};
         public static int maxEnergia = 100;
         public static int radioObjetivo = 100;
+        public static Rectangle barrasUIRect = new Rectangle(10, SCREEN_HEIGHT-10-141, 150, 141);
+        public static Rectangle barrasUIFill1Rect = new Rectangle(barrasUIRect.X+9, barrasUIRect.Y+9, 58, 117);
+        public static Rectangle barrasUIFill2Rect = new Rectangle(barrasUIRect.X+83, barrasUIRect.Y+9, 58, 117);
+        public static float startShipEnergy = 1;
+        public static float startAcumEnergy = 0;
+        public static float energyDelta = .0002f;
+        public static float deltaAcumEnergy = .002f;
+        
+
+        /*****UI*****/
+        public static Texture2D texturaUIBarras;
+        public static Texture2D texturaUIFill1;
+        public static Texture2D texturaUIFill2;
+
 
         /****BOTONES****/
         public static Texture2D texturaBotonHome;

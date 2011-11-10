@@ -40,6 +40,17 @@ namespace com.dancingParticles.gui.screens
         {
             nave.Update();
             fisica.Update();
+            //RESET GAME OR WHAT EVER DEPENDING ON ENERGY LEVELS
+            if (nave.energia <= 0)
+            {
+                Reset();
+            }
+            else if (fisica.acumEnergy >= 1)
+            {
+                Reset();//PASA AL SIGUIENTE NIVEL
+            }
+
+
             //check user Drag Drop Events
             if (mouse.LeftButton == ButtonState.Pressed)
             {
@@ -80,13 +91,15 @@ namespace com.dancingParticles.gui.screens
         public void Reset()
         {
             fisica.Reset();
+            nave.Reset();
             setElements();
         }
 
         public void setElements()
         {
-           
 
+            nave.posicion.X = 70;
+            nave.posicion.Y = 10;
             /*** DEBUG ***/
             fisica.agregarAtractor(new Vector2(350, 150), 600);
             fisica.agregarAtractor(new Vector2(700, 600), -300);
@@ -108,6 +121,17 @@ namespace com.dancingParticles.gui.screens
             {
                 button.drawTexture(spriteBatch);
             }
+
+            //DRAW UI EXTRA ELEMENTS
+            spriteBatch.Draw(Properties.texturaUIBarras, Properties.barrasUIRect, new Color(1, 1, 1, 0.5f));
+            //CALCULATE ENERGY RECT
+            Rectangle energyRect            =  new Rectangle(Properties.barrasUIFill1Rect.X, Properties.barrasUIFill1Rect.Y + (Properties.barrasUIFill1Rect.Height-(int)(Properties.barrasUIFill1Rect.Height * nave.energia)), Properties.barrasUIFill1Rect.Width, (int)(Properties.barrasUIFill1Rect.Height * nave.energia));
+            Rectangle energyTargetRect      = new Rectangle(Properties.barrasUIFill2Rect.X, Properties.barrasUIFill2Rect.Y + (Properties.barrasUIFill2Rect.Height - (int)(Properties.barrasUIFill2Rect.Height * fisica.acumEnergy)), Properties.barrasUIFill2Rect.Width, (int)(Properties.barrasUIFill2Rect.Height * fisica.acumEnergy));
+            spriteBatch.Draw(Properties.texturaUIFill1, energyRect, new Color(1, 1, 1, 0.8f));
+            spriteBatch.Draw(Properties.texturaUIFill2, energyTargetRect, new Color(1, 1, 1, 0.8f));
+
+           
+
         }
     }
 }

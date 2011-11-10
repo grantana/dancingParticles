@@ -12,6 +12,8 @@ namespace com.dancingParticles.engine
         private int energia;
         private int radio; // tamaño de colision con objetivo
 
+        public Vector2 Position { get { return position; } }
+
         public Objetivo(Vector2 pos, int energiaTarget)
         {
             this.position = pos;
@@ -42,7 +44,7 @@ namespace com.dancingParticles.engine
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            Vector2 realPosition = new Vector2(position.X-radio, position.Y-radio);
+            Rectangle realPosition = new Rectangle( (int)(position.X - radio) , (int)(position.Y - radio), (int)(Properties.radioObjetivo * 2), (int)(Properties.radioObjetivo * 2));
             spriteBatch.Draw(textura, realPosition, Color.White);
         }
     }

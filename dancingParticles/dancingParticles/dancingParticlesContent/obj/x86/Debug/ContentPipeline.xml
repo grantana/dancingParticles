@@ -116,7 +116,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\nave.xnb</Output>
-      <Time>2011-11-01T20:04:55-06:00</Time>
+      <Time>2011-11-09T23:40:58-06:00</Time>
     </Item>
     <Item>
       <Source>mock\gui\screens\GameScreen.jpg</Source>
@@ -197,7 +197,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\botones\botonHome.xnb</Output>
-      <Time>2011-11-09T17:00:28-06:00</Time>
+      <Time>2011-11-09T17:40:45-06:00</Time>
     </Item>
     <Item>
       <Source>mock\gui\botones\botonReload.jpg</Source>
@@ -206,7 +206,34 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\botones\botonReload.xnb</Output>
-      <Time>2011-11-09T17:01:38-06:00</Time>
+      <Time>2011-11-09T17:40:45-06:00</Time>
+    </Item>
+    <Item>
+      <Source>mock\gui\barras.png</Source>
+      <Name>mock\gui\barras</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\barras.xnb</Output>
+      <Time>2011-11-09T23:19:04-06:00</Time>
+    </Item>
+    <Item>
+      <Source>mock\gui\barrasLaserRelleno.png</Source>
+      <Name>mock\gui\barrasLaserRelleno</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\barrasLaserRelleno.xnb</Output>
+      <Time>2011-11-09T23:19:04-06:00</Time>
+    </Item>
+    <Item>
+      <Source>mock\gui\barrasRellenoObjetivo.png</Source>
+      <Name>mock\gui\barrasRellenoObjetivo</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\barrasRellenoObjetivo.xnb</Output>
+      <Time>2011-11-09T23:19:04-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
