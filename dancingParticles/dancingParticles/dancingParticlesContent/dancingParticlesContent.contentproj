@@ -225,6 +225,61 @@
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="mock\gui\screens\Instrucciones.jpg">
+      <Name>Instrucciones</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="mock\gui\botones\botonAyuda.jpg">
+      <Name>botonAyuda</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="mock\gui\botones\botonCerrar.jpg">
+      <Name>botonCerrar</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Audio\audio.xap">
+      <Name>audio</Name>
+      <Importer>XactImporter</Importer>
+      <Processor>XactProcessor</Processor>
+    </Compile>
+    <None Include="Audio\Win\audio.xgs">
+      <Name>audio</Name>
+    </None>
+    <None Include="Audio\Win\sounds.xsb">
+      <Name>sounds</Name>
+    </None>
+    <None Include="Audio\Win\waves.xwb">
+      <Name>waves</Name>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Audio\Bridge_180bps.wav">
+      <Name>Bridge_180bps</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Audio\Tema_180bps_Loop.wav">
+      <Name>Tema_180bps_Loop</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Audio\Verso_180bps_Loop.wav">
+      <Name>Verso_180bps_Loop</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Audio\Xbox\" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

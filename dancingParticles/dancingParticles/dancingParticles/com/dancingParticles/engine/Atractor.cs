@@ -15,57 +15,97 @@ namespace com.dancingParticles.engine
          * 
          * Este objeto no se mueve, sólo afecta las particulas
          * **********************************/
-        
+
         /*** GUI ***/
-        private Texture2D textura;
-        private Rectangle rect;
-        
-        private Vector2 posicion;
-        private int mass;
-        private float radio;
+        protected Texture2D textura;
+
+        protected Rectangle rect;
+
+        protected Vector2 posicion;
+        protected int mass;
+
+        protected float radio;
 
         public Vector2 Posicion { get { return posicion; } }
         public float Radio { get { return radio; } }
         public int Mass { get { return mass; } }
 
+
+
+        public Atractor() { }
         public Atractor(Vector2 posicion, int masa)
         {
             this.posicion = posicion;
             this.mass = masa;
 
-            int _size = Properties.sizeAtractor;
-            this.radio = _size / 2;
+
 
             //dependiendo de la masa usar texturas diferentes
             if (masa < 0)
             {
-                textura = Properties.texturaAtractor1;
+                textura = Properties.TexturaAtractor1;
             }
             else
             {
-                textura = Properties.texturaAtractor2;
+                textura = Properties.TexturaAtractor2;
             }
-            rect = new Rectangle((int)posicion.X - _size / 2, (int)posicion.Y - _size / 2, _size, _size);
-            /*** INTENTAR PONER EL TAMAÑO DEPENDIENTE DE LA MASA ***/
+
+
+
+            this.init();
+
         }
 
-        /*****************************************
-         * Yo aqui quiero un update que haga que gire el mundo :/
-         * **************************************/
+
+
+        protected void init()
+        {
+
+            int _size = Properties.sizeAtractor;
+
+            this.radio = _size / 2;
+
+
+
+            rect = new Rectangle((int)posicion.X, (int)posicion.Y, _size, _size);
+
+            setPosicion(posicion);
+
+        }
+
+
+
+        protected void initWithMass()
+        {
+
+            radio = Math.Abs(mass) / 2 * 0.3f;
+
+            rect = new Rectangle((int)(posicion.X), (int)(posicion.Y), (int)radio * 2, (int)radio * 2);
+
+
+
+            /*** ajustar masa y Sprite ***/
+
+            setPosicion(posicion);
+
+        }
+
         public void Update() { }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(textura,rect,Color.White);
+            spriteBatch.Draw(textura, rect, Color.White);
         }
 
         public void setPosicion(Vector2 nPosicion)
         {
             this.posicion = nPosicion;
-            int deltaX = Properties.sizeAtractor/2;
-            int deltaY = Properties.sizeAtractor/2;
-            rect.X = (int)posicion.X - deltaX;
-            rect.Y = (int)posicion.Y - deltaY;
+
+            Console.WriteLine("Posicion: {" + rect.X + " , " + rect.Y + "}  Size: {" + rect.Width + " , " + rect.Width + "}");
+
+            Console.WriteLine("Radio: " + radio);
+            rect.X = (int)(posicion.X - radio);
+            rect.Y = (int)(posicion.Y - radio);
         }
     }
 }

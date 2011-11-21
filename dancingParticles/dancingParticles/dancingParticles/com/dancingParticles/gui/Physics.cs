@@ -11,11 +11,13 @@ namespace com.dancingParticles.engine
      * perder su referencia  ;) -Alan
      */
 
-    public  class Physics
+    public class Physics
     {
         private static Physics instance;
         private List<Particle> particulas;
         private List<Atractor> atractores;
+
+        private List<Planet> planetas;
         private Objetivo objetivo;
         public float acumEnergy;
         public Physics() { init(); }
@@ -37,6 +39,8 @@ namespace com.dancingParticles.engine
             /*** inicializar ***/
             particulas = new List<Particle>();
             atractores = new List<Atractor>();
+
+            planetas = new List<Planet>();
             acumEnergy = Properties.startAcumEnergy;
         }
 
@@ -51,7 +55,14 @@ namespace com.dancingParticles.engine
 
         public void agregarAtractor(Vector2 posicion, int masa)
         {
-            atractores.Add(new Atractor(posicion,masa));
+            atractores.Add(new Atractor(posicion, masa));
+        }
+
+
+
+        public void agregarPlaneta(Vector2 posicion, int masa)
+        {
+            planetas.Add(new Planet(posicion, masa));
         }
 
         public void agregarObjetivo(Vector2 posicion, int energia)
@@ -64,22 +75,37 @@ namespace com.dancingParticles.engine
         {
             /*** hacer update si la lista tiene algo ***/
             foreach (Particle p in particulas) { p.Update(); }
+            /*** planetas ***/
 
-            /*** atractores ***/
-            foreach (Atractor a in atractores)
+            foreach (Atractor plnt in planetas)
             {
-                foreach (Particle p in particulas)
-                {
-                    // revisar distancia y aplicar gravedad
-                    gravitate(a, p);
-
-                    // revisar que las partículas salgan de pantalla
-                    checkEdge(p);
-                }
                 for (int i = 0; i < particulas.Count; i++)
                 {
                     if (i >= particulas.Count) { return; }
                     Particle p = particulas[i];
+                    // revisar distancia y aplicar gravedad
+                    if (gravitate(plnt, p))
+                    {
+                        particulas.Remove(p);
+                        i--;
+                    }
+                }
+            }
+
+            /*** atractores ***/
+            foreach (Atractor a in atractores)
+            {
+                /*foreach (Particle p in particulas)
+                {
+                    // revisar distancia y aplicar gravedad
+                    gravitate(a, p);
+                }*/
+                for (int i = 0; i < particulas.Count; i++)
+                {
+                    if (i >= particulas.Count) { return; }
+                    Particle p = particulas[i];
+
+                    // revisar que las partículas salgan de pantalla
                     if (gravitate(a, p) || checkEdge(p))
                     {
                         particulas.Remove(p);
@@ -90,6 +116,7 @@ namespace com.dancingParticles.engine
                         particulas.Remove(p);
                         i--;
                         acumEnergy += Properties.deltaAcumEnergy;
+                        //Console.WriteLine("" + acumEnergy);
                     }
                 }
             }
@@ -99,12 +126,20 @@ namespace com.dancingParticles.engine
         {
             /*** atractores ***/
             foreach (Atractor a in atractores) { a.Draw(spriteBatch); }
-            
+
             /*** hacer draw si la lista tiene algo ***/
             foreach (Particle p in particulas)
             {
                 // Draw
                 p.Draw(spriteBatch);
+            }
+
+
+
+            foreach (Planet pl in planetas)
+            {
+                pl.Draw(spriteBatch);
+
             }
 
             /*** draw objetivo ***/
@@ -136,6 +171,7 @@ namespace com.dancingParticles.engine
 
         private bool targetImpact(Objetivo a, Particle p)
         {
+           
             float dx = p.Position.X - a.Position.X;
             float dy = p.Position.Y - a.Position.Y;
             float distSQ = dx * dx + dy * dy;
@@ -148,7 +184,7 @@ namespace com.dancingParticles.engine
         }
 
 
-         private bool checkEdge(Particle p)
+        private bool checkEdge(Particle p)
         {
             /*** quitar la partícula si ya salió de pantalla ***/
             if (p.Position.X < 0 || p.Position.X > Properties.SCREEN_WITH
@@ -163,7 +199,7 @@ namespace com.dancingParticles.engine
         public Atractor getAtractorUnderMouse(Vector2 mousePos)
         {
             //min distance from mouse to atractor
-            float minDistance = Properties.sizeAtractor*.5f;
+            float minDistance = Properties.sizeAtractor * .5f;
 
             foreach (Atractor a in atractores)
             {
@@ -182,6 +218,8 @@ namespace com.dancingParticles.engine
         {
             atractores.Clear();
             particulas.Clear();
+
+            planetas.Clear();
             acumEnergy = Properties.startAcumEnergy;
         }
 

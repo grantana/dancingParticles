@@ -23,7 +23,9 @@ namespace com.dancingParticles
         public static float energyDelta = .0002f;
         public static float deltaAcumEnergy = .002f;
         public static float mouseSpeed = 15;
-        
+
+        /*** CURRENT LEVEL ***/
+        public static int currentLevel = 0;
 
         /*****UI*****/
         public static Texture2D texturaUIBarras;
@@ -37,54 +39,27 @@ namespace com.dancingParticles
         /****BOTONES****/
         public static Texture2D texturaBotonHome;
         public static Texture2D texturaBotonReload;
+        public static Texture2D texturaBotonCerrar;
+        public static Texture2D texturaBotonAyuda;
 
         /*** Particulas ***/
-        public static Texture2D texturaParticula;
-        public static Texture2D texturaObjetivo;
-        public static Texture2D TexturaParticula
-        {
-            get { return texturaParticula; }
-            set { texturaParticula = value; }
-        }
+        public static Texture2D TexturaObjetivo;
+        public static Texture2D TexturaParticula { get; set; }
         public static int maxSize = 20;
         public static int minSize = 2;
 
         /*** Nave ***/
-        public static Texture2D texturaNave;
-        public static Texture2D TexturaNave
-        {
-            set { texturaNave = value; }
-            get { return texturaNave; }
-        }
+        public static Texture2D TexturaNave { get; set; }
+
+        /*** Planeta ***/
+        public static Texture2D TexturaPlaneta { get; set; }
 
         /*** Atractor ***/
-        public static Texture2D texturaAtractor1;
-        public static Texture2D TexturaAtractor1
-        {
-            get { return texturaAtractor1; }
-            set { texturaAtractor1 = value;}
-        }
 
-        public static Texture2D texturaAtractor2;
-        public static Texture2D TexturaAtractor2
-        {
-            get { return texturaAtractor2; }
-            set { texturaAtractor2 = value; }
-        }
-
-        public static Texture2D texturaAtractor3;
-        public static Texture2D TexturaAtractor3
-        {
-            get { return texturaAtractor3; }
-            set { texturaAtractor3 = value; }
-        }
-
-        public static Texture2D texturaAtractor4;
-        public static Texture2D TexturaAtractor4
-        {
-            get { return texturaAtractor4; }
-            set { texturaAtractor4 = value; }
-        }
+        public static Texture2D TexturaAtractor1 { get; set; }
+        public static Texture2D TexturaAtractor2 { get; set; }
+        public static Texture2D TexturaAtractor3 { get; set; }
+        public static Texture2D TexturaAtractor4 { get; set; }
         public static int sizeAtractor = 80;
     }
 }

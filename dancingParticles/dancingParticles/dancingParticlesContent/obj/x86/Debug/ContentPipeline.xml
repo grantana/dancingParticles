@@ -107,7 +107,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\particula.xnb</Output>
-      <Time>2011-11-11T02:06:55-06:00</Time>
+      <Time>2011-11-20T19:23:55-06:00</Time>
     </Item>
     <Item>
       <Source>mock\gui\nave.png</Source>
@@ -116,7 +116,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\nave.xnb</Output>
-      <Time>2011-11-12T01:02:26-06:00</Time>
+      <Time>2011-11-20T19:23:55-06:00</Time>
     </Item>
     <Item>
       <Source>mock\gui\cursor.png</Source>
@@ -233,7 +233,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\screens\GameScreen.xnb</Output>
-      <Time>2011-11-09T17:09:20-06:00</Time>
+      <Time>2011-11-20T19:23:55-06:00</Time>
     </Item>
     <Item>
       <Source>mock\gui\screens\GameScreen_mid.png</Source>
@@ -242,7 +242,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\screens\GameScreen_mid.xnb</Output>
-      <Time>2011-11-09T17:09:29-06:00</Time>
+      <Time>2011-11-20T19:23:55-06:00</Time>
     </Item>
     <Item>
       <Source>mock\gui\screens\parallax_1.png</Source>
@@ -251,7 +251,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\screens\parallax_1.xnb</Output>
-      <Time>2011-11-11T22:58:35-06:00</Time>
+      <Time>2011-11-20T19:23:55-06:00</Time>
     </Item>
     <Item>
       <Source>mock\gui\screens\parallax_2.png</Source>
@@ -260,7 +260,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\screens\parallax_2.xnb</Output>
-      <Time>2011-11-11T22:58:20-06:00</Time>
+      <Time>2011-11-20T19:23:55-06:00</Time>
     </Item>
     <Item>
       <Source>mock\gui\screens\parallax_3.png</Source>
@@ -269,7 +269,61 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\screens\parallax_3.xnb</Output>
-      <Time>2011-11-11T22:58:06-06:00</Time>
+      <Time>2011-11-20T19:23:55-06:00</Time>
+    </Item>
+    <Item>
+      <Source>mock\gui\screens\Instrucciones.jpg</Source>
+      <Name>mock\gui\screens\Instrucciones</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\screens\Instrucciones.xnb</Output>
+      <Time>2011-11-20T21:43:13-06:00</Time>
+    </Item>
+    <Item>
+      <Source>mock\gui\botones\botonAyuda.jpg</Source>
+      <Name>mock\gui\botones\botonAyuda</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\botones\botonAyuda.xnb</Output>
+      <Time>2011-11-20T21:59:28-06:00</Time>
+    </Item>
+    <Item>
+      <Source>mock\gui\botones\botonCerrar.jpg</Source>
+      <Name>mock\gui\botones\botonCerrar</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\botones\botonCerrar.xnb</Output>
+      <Time>2011-11-20T21:59:28-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\Bridge_180bps.wav</Source>
+      <Name>Audio\Bridge_180bps</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\Audio\Bridge_180bps.xnb</Output>
+      <Time>2011-11-20T23:41:59-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\Tema_180bps_Loop.wav</Source>
+      <Name>Audio\Tema_180bps_Loop</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\Audio\Tema_180bps_Loop.xnb</Output>
+      <Time>2011-11-20T23:42:00-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Audio\Verso_180bps_Loop.wav</Source>
+      <Name>Audio\Verso_180bps_Loop</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\Audio\Verso_180bps_Loop.xnb</Output>
+      <Time>2011-11-20T23:42:00-06:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

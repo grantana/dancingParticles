@@ -9,16 +9,19 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Net;
-using Microsoft.Xna.Framework.Storage;  
- 
+using Microsoft.Xna.Framework.Storage;
+
 
 
 namespace com.dancingParticles.engine
 {
     /* Use this class to handle game states 
      */
-    public class StateManager
+    public sealed class StateManager
     {
+
+        private static StateManager instance;
+
         public bool activated, stageLoaded;
         //Current state
         public int state;
@@ -26,16 +29,28 @@ namespace com.dancingParticles.engine
         private float startTime;
         private float timeToNextState;
         private float currentStateTicks;
-        public float maxTicks; 
+        public float maxTicks;
 
 
 
-        public StateManager(int state)
+        private StateManager(int state)
         {
+            /*** El constructor solamente se puede accesar internamente ***/
             this.state = state;
             activated = false;
             stageLoaded = false;
-            Console.WriteLine("StateManager init: "+state);
+            Console.WriteLine("StateManager init: " + state);
+        }
+
+
+
+        public static StateManager getInstance(int state)
+        {
+
+            if (instance == null) { instance = new StateManager(state); }
+
+            return instance;
+
         }
 
         /*
@@ -52,6 +67,17 @@ namespace com.dancingParticles.engine
             stageLoaded = false;
         }
 
+
+
+        public void instaShazamSwitch(int nextState)
+        {
+
+            this.state = nextState;
+
+            stageLoaded = true;
+
+        }
+
         public void makeSwitch()
         {
             this.state = nextState;
@@ -59,7 +85,7 @@ namespace com.dancingParticles.engine
         }
 
 
-        public void startInternalTimer(GameTime gameTime) 
+        public void startInternalTimer(GameTime gameTime)
         {
             Console.WriteLine("StateManager startInternalTimer: " + gameTime);
             activated = true;
@@ -73,7 +99,7 @@ namespace com.dancingParticles.engine
         {
             //Console.WriteLine("gameTime.ElapsedGameTime.Milliseconds: " + gameTime.TotalGameTime.Seconds);
             currentStateTicks++;
-            if ((startTime + timeToNextState) < gameTime.TotalGameTime.Seconds)  
+            if ((startTime + timeToNextState) < gameTime.TotalGameTime.Seconds)
             {
                 if (!stageLoaded)
                 {
@@ -89,6 +115,6 @@ namespace com.dancingParticles.engine
             return currentStateTicks;
         }
 
-       
+
     }
 }

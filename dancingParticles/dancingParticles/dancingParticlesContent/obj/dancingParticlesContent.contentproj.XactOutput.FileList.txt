@@ -1,0 +1,3 @@
+Content\Audio\audio.xgs
+Content\Audio\waves.xwb
+Content\Audio\sounds.xsb

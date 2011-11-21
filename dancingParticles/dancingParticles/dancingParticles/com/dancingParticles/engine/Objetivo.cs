@@ -17,7 +17,7 @@ namespace com.dancingParticles.engine
         public Objetivo(Vector2 pos, int energiaTarget)
         {
             this.position = pos;
-            this.textura = Properties.texturaObjetivo;
+            this.textura = Properties.TexturaObjetivo;
             energia = 0;
             radio = Properties.radioObjetivo;
         }

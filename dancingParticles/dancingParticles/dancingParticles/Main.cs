@@ -23,18 +23,28 @@ namespace dancingParticles
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         public StateManager stateManager;
-        Texture2D screenSplashTexture, screenMenuTexture, screenPauseTexture, screenCreditsTexture, screenGameTexture, guiSelectorTexture, guiRectangeTexture, mouseTexture;
+        Texture2D screenSplashTexture, screenMenuTexture, screenPauseTexture, screenCreditsTexture, screenGameTexture, guiSelectorTexture, guiRectangeTexture, mouseTexture, screenHelpTexture;
 
         /*** Pantallas ***/
         Menu screenMenu;
         Creditos screenCreditos;
+        Instrucciones screenInstrucciones;
         Juego juego;
         
 
         /***** UI ******/
         MouseDP mouse;
         Vector2 posMouse;
-        
+
+        public int lastState = 0;
+
+        /***** AUDIO *****/
+        AudioEngine audioEngine;
+        WaveBank waveBank;
+        SoundBank soundBank;
+        Cue cue;
+        Cue cue1;
+        Boolean cancion;
 
         public Main()
         {
@@ -43,7 +53,7 @@ namespace dancingParticles
             graphics.PreferredBackBufferWidth   = Properties.SCREEN_WITH;
             graphics.PreferredBackBufferHeight  = Properties.SCREEN_HEIGHT;
             Content.RootDirectory = "Content";
-            stateManager = new StateManager(0);
+            stateManager = StateManager.getInstance(0);
         }
 
         /// <summary>
@@ -75,18 +85,22 @@ namespace dancingParticles
             Properties.parallax_3 = Content.Load<Texture2D>("mock/gui/screens/parallax_3");
             Properties.TexturaParticula     = Content.Load<Texture2D>("mock/gui/particula");
             Properties.TexturaNave          = Content.Load<Texture2D>("mock/gui/nave");
-            Properties.texturaAtractor1     = Content.Load<Texture2D>("mock/gui/Atractors");
-            Properties.texturaAtractor2     = Content.Load<Texture2D>("mock/gui/Atractors1");
-            Properties.texturaAtractor3     = Content.Load<Texture2D>("mock/gui/Atractors2");
-            Properties.texturaAtractor4     = Content.Load<Texture2D>("mock/gui/Atractors4");
-            Properties.texturaObjetivo      = Content.Load<Texture2D>("mock/gui/objetivo");
+            Properties.TexturaAtractor1     = Content.Load<Texture2D>("mock/gui/Atractors");
+            Properties.TexturaAtractor2     = Content.Load<Texture2D>("mock/gui/Atractors1");
+            Properties.TexturaAtractor3     = Content.Load<Texture2D>("mock/gui/Atractors2");
+            Properties.TexturaAtractor4     = Content.Load<Texture2D>("mock/gui/Atractors4");
+            Properties.TexturaPlaneta       = Content.Load<Texture2D>("mock/gui/planeta");
+            Properties.TexturaObjetivo      = Content.Load<Texture2D>("mock/gui/objetivo");
             Properties.texturaBotonHome     = Content.Load<Texture2D>("mock/gui/botones/botonHome");
             Properties.texturaBotonReload   = Content.Load<Texture2D>("mock/gui/botones/botonReload");
+            Properties.texturaBotonCerrar   = Content.Load<Texture2D>("mock/gui/botones/botonCerrar");
+            Properties.texturaBotonAyuda    = Content.Load<Texture2D>("mock/gui/botones/botonAyuda");
             Properties.texturaUIBarras      = Content.Load<Texture2D>("mock/gui/barras");
             Properties.texturaUIFill1       = Content.Load<Texture2D>("mock/gui/barrasLaserRelleno");
             Properties.texturaUIFill2       = Content.Load<Texture2D>("mock/gui/barrasRellenoObjetivo");
 
             screenSplashTexture    =   Content.Load<Texture2D>("mock/gui/screens/Splash");
+            screenHelpTexture      =   Content.Load<Texture2D>("mock/gui/screens/Instrucciones");
             screenMenuTexture      =   Content.Load<Texture2D>("mock/gui/screens/Menu");
             screenCreditsTexture   =   Content.Load<Texture2D>("mock/gui/screens/Credits");
             screenGameTexture      =   Content.Load<Texture2D>("mock/gui/screens/GameScreen");
@@ -95,8 +109,10 @@ namespace dancingParticles
             guiRectangeTexture     =   Content.Load<Texture2D>("mock/gui/rect");
             mouseTexture           =   Content.Load<Texture2D>("mock/gui/cursor");
             // TODO: use this.Content to load your game content here
-            screenMenu = new Menu(screenMenuTexture, guiRectangeTexture, this);
-            screenCreditos = new Creditos(screenCreditsTexture, guiRectangeTexture, this);
+            screenMenu              = new Menu(screenMenuTexture, guiRectangeTexture, this);
+            screenCreditos          = new Creditos(screenCreditsTexture, guiRectangeTexture, this);
+            screenInstrucciones     = new Instrucciones(screenHelpTexture, guiRectangeTexture, this);
+
             //screenMenu.addButton(Properties.SCREEN_WITH/2 - 120, 130, 200, 35);
             //screenMenu.addButton(Properties.SCREEN_WITH/2 - 120, 180, 200, 35);
 
@@ -105,6 +121,18 @@ namespace dancingParticles
             juego = new Juego(screenGameTexture, guiRectangeTexture, this);
             mouse = new MouseDP(mouseTexture, Vector2.Zero);
             posMouse = new Vector2(Properties.SCREEN_WITH/2, Properties.SCREEN_HEIGHT/2);
+
+            /*** LOAD AUDIO ***/
+
+            audioEngine = new AudioEngine("Content/Audio/audio.xgs");
+            waveBank = new WaveBank(audioEngine, "Content/Audio/waves.xwb");
+            soundBank = new SoundBank(audioEngine, "Content/Audio/sounds.xsb");
+            soundBank.PlayCue("Tema");
+
+            /****************
+             * soundBank.PlayCue("Tema"); 
+             * los nombres que tenemos son Bridge, Tema, Verso
+             * ***************/
         }
 
         /// <summary>
@@ -161,6 +189,9 @@ namespace dancingParticles
                 case 4:
                     updateCreditosScreen(gameTime);
                     break;
+                case 5:
+                    updateInstruccionesScreen(gameTime);
+                    break;
                 default:
                     //Console.WriteLine("state is not defined");
                     break;
@@ -207,6 +238,12 @@ namespace dancingParticles
             screenCreditos.Update(mouse.pos, Mouse.GetState(), GamePad.GetState(PlayerIndex.One), gameTime);
         }
 
+        private void updateInstruccionesScreen(GameTime gameTime)
+        {
+            /*** Hacer Update de Physics y cualquier cosa del juego ***/
+            screenInstrucciones.Update(mouse.pos, Mouse.GetState(), GamePad.GetState(PlayerIndex.One), gameTime);
+        }
+
 
         protected void drawSplashScreen()
         {
@@ -232,6 +269,15 @@ namespace dancingParticles
         {
             spriteBatch.Begin();
             screenCreditos.Draw(spriteBatch);
+            mouse.Draw(spriteBatch);
+            //any custom extra draw here
+            spriteBatch.End();
+        }
+
+        protected void drawInstruccionesScreen()
+        {
+            spriteBatch.Begin();
+            screenInstrucciones.Draw(spriteBatch);
             mouse.Draw(spriteBatch);
             //any custom extra draw here
             spriteBatch.End();
@@ -277,6 +323,9 @@ namespace dancingParticles
                     break;
                 case 4:
                     drawCreditosScreen();
+                    break;
+                case 5:
+                    drawInstruccionesScreen();
                     break;
                 default:
                     Console.WriteLine("state is not defined");

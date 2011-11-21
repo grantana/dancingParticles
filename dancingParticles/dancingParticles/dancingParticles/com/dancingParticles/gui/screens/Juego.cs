@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Xml.Serialization;
+using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using com.dancingParticles.gui;
 using dancingParticles;
 using com.dancingParticles.engine;
+using com.dancingParticles.Levels;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Storage;
 
 namespace com.dancingParticles.gui.screens
 {
@@ -16,7 +21,7 @@ namespace com.dancingParticles.gui.screens
          * 
          * Para pruebas aqui voy a agregar particulas a lo tonto, gracias.
          */
-
+        private Niveles niveles;
         private Physics fisica;
         private Nave nave;
         private Boolean pressedFlag = false;
@@ -43,8 +48,9 @@ namespace com.dancingParticles.gui.screens
             fisica = Physics.Instance;
             nave = new Nave();
             /****GUI****/
-            addButton(Properties.SCREEN_WITH - 200 + 10, 10, 50, 50, Properties.texturaBotonHome, 1);
-            addButton(Properties.SCREEN_WITH - 200 + 100, 10, 50, 50, Properties.texturaBotonReload, 2);
+            addButton(Properties.SCREEN_WITH - 240 + 0, 10, 50, 50, Properties.texturaBotonHome, 1);
+            addButton(Properties.SCREEN_WITH - 240 + 80, 10, 50, 50, Properties.texturaBotonReload, 2);
+            addButton(Properties.SCREEN_WITH - 240 + 160, 10, 50, 50, Properties.texturaBotonAyuda, 3);
             posMouse = new Vector2(Properties.SCREEN_WITH/2, Properties.SCREEN_HEIGHT/2);
             parallax_1 = Properties.parallax_1;
             parallax_2 = Properties.parallax_2;
@@ -54,8 +60,24 @@ namespace com.dancingParticles.gui.screens
             posFondo_1 = 0;
 
 
+            loadXML();
+
+
+
+        }
+
+
+
+        private void loadXML()
+        {
+
+            /*** Load propiedades del XML ***/
+            var fileStream = new FileStream("Content/Levels/levels.xml", FileMode.Open);
+            var xmlSerializer = new XmlSerializer(typeof(Niveles));
+            niveles = (Niveles)xmlSerializer.Deserialize(fileStream);
+            Console.WriteLine(niveles.defNiveles[0].posicionNave);
             setElements();
-           
+
         }
 
         public void Update(Vector2 pos, MouseState mouse, GamePadState gps, GameTime gameTime)
@@ -69,6 +91,8 @@ namespace com.dancingParticles.gui.screens
             }
             else if (fisica.acumEnergy >= 1)
             {
+                // Aumentar el nivel actual
+                Properties.currentLevel = (Properties.currentLevel + 1) % niveles.defNiveles.Count;
                 Reset();//PASA AL SIGUIENTE NIVEL
             }
 
@@ -79,21 +103,28 @@ namespace com.dancingParticles.gui.screens
                 int clickedID = getClickedID(new Vector2(pos.X, pos.Y));
                 if (clickedID >= 0)
                 {
-                    if (clickedID == 1)
+                    switch (clickedID)
                     {
-                        main.stateManager.loadNextScreen(1, 0, gameTime);
+                        case 1:
+                            // Ir a pantalla de menu
+                            main.stateManager.loadNextScreen(1, 0, gameTime);
+                            break;
+                        case 2:
+                            Reset();
+                            break;
+                        case 3:
+                             main.lastState = 2;
+                            main.stateManager.loadNextScreen(5, 0, gameTime);
+                            break;
+                        default: break;
                     }
-                    if (clickedID == 2)
-                    {
-                        Reset();
-                    }
-                     
-                    Console.WriteLine("BUTTON PRESSED: clickedID: "+clickedID);
+
+                    Console.WriteLine("BUTTON PRESSED: clickedID: " + clickedID);
                     //APACURRO BOTONES 
                 }
                 if (pressedFlag)
                 {
-                     lastPressedAtractor.setPosicion(new Vector2(pos.X, pos.Y));
+                    lastPressedAtractor.setPosicion(new Vector2(pos.X, pos.Y));
                 }
 
                 Atractor pressedAtractor = fisica.getAtractorUnderMouse(new Vector2(pos.X, pos.Y));
@@ -102,7 +133,7 @@ namespace com.dancingParticles.gui.screens
                     lastPressedAtractor = pressedAtractor;
                     //USER IS PRESSING PLANET
                     pressedFlag = true;
-                   
+
                 }
             }
             else
@@ -112,6 +143,9 @@ namespace com.dancingParticles.gui.screens
 
 
         }
+
+
+     
 
         public void Reset()
         {
@@ -123,12 +157,43 @@ namespace com.dancingParticles.gui.screens
         public void setElements()
         {
 
-            nave.posicion.X = 70;
-            nave.posicion.Y = 10;
+            int _level = Properties.currentLevel;
+            nave.posicion.X = Convert.ToSingle(niveles.defNiveles[_level].posicionNave.Split(',')[0]);
+            nave.posicion.Y = Convert.ToSingle(niveles.defNiveles[_level].posicionNave.Split(',')[1]);
+            nave.angulo = niveles.defNiveles[_level].anguloNave;
+
+
+
+            /*** Attractors ***/
+            foreach (xmlAttractor att in niveles.defNiveles[_level].attractors)
+            {
+                Vector2 pos = new Vector2(Convert.ToSingle(att.posicion.Split(',')[0]), Convert.ToSingle(att.posicion.Split(',')[1]));
+                fisica.agregarAtractor(pos, att.masa);
+            }
+
+
+
+            /*** Planetas ***/
+            foreach (xmlPlanet plnt in niveles.defNiveles[_level].planetas)
+            {
+                Vector2 pos = new Vector2(Convert.ToSingle(plnt.posicion.Split(',')[0]), Convert.ToSingle(plnt.posicion.Split(',')[1]));
+                fisica.agregarPlaneta(pos, plnt.masa);
+            }
+
+
+
+            /*** Objetivo ***/
+            String posObj = niveles.defNiveles[_level].posicionObjetivo;
+            fisica.agregarObjetivo(new Vector2(Convert.ToSingle(posObj.Split(',')[0]), Convert.ToSingle(posObj.Split(',')[1])), Properties.maxEnergia);
+
+
+
             /*** DEBUG ***/
-            fisica.agregarAtractor(new Vector2(350, 150), 600);
-            fisica.agregarAtractor(new Vector2(700, 600), -300);
-            fisica.agregarObjetivo(new Vector2(900, 500), Properties.maxEnergia);
+
+            // fisica.agregarAtractor(new Vector2(350, 150), 600);
+            //fisica.agregarAtractor(new Vector2(700, 600), -300);
+            //fisica.agregarObjetivo(new Vector2(900, 500), Properties.maxEnergia);
+
         }
 
 
@@ -156,13 +221,10 @@ namespace com.dancingParticles.gui.screens
             //DRAW UI EXTRA ELEMENTS
             spriteBatch.Draw(Properties.texturaUIBarras, Properties.barrasUIRect, new Color(1, 1, 1, 0.5f));
             //CALCULATE ENERGY RECT
-            Rectangle energyRect            =  new Rectangle(Properties.barrasUIFill1Rect.X, Properties.barrasUIFill1Rect.Y + (Properties.barrasUIFill1Rect.Height-(int)(Properties.barrasUIFill1Rect.Height * nave.energia)), Properties.barrasUIFill1Rect.Width, (int)(Properties.barrasUIFill1Rect.Height * nave.energia));
-            Rectangle energyTargetRect      = new Rectangle(Properties.barrasUIFill2Rect.X, Properties.barrasUIFill2Rect.Y + (Properties.barrasUIFill2Rect.Height - (int)(Properties.barrasUIFill2Rect.Height * fisica.acumEnergy)), Properties.barrasUIFill2Rect.Width, (int)(Properties.barrasUIFill2Rect.Height * fisica.acumEnergy));
+            Rectangle energyRect = new Rectangle(Properties.barrasUIFill1Rect.X, Properties.barrasUIFill1Rect.Y + (Properties.barrasUIFill1Rect.Height - (int)(Properties.barrasUIFill1Rect.Height * nave.energia)), Properties.barrasUIFill1Rect.Width, (int)(Properties.barrasUIFill1Rect.Height * nave.energia));
+            Rectangle energyTargetRect = new Rectangle(Properties.barrasUIFill2Rect.X, Properties.barrasUIFill2Rect.Y + (Properties.barrasUIFill2Rect.Height - (int)(Properties.barrasUIFill2Rect.Height * fisica.acumEnergy)), Properties.barrasUIFill2Rect.Width, (int)(Properties.barrasUIFill2Rect.Height * fisica.acumEnergy));
             spriteBatch.Draw(Properties.texturaUIFill1, energyRect, new Color(1, 1, 1, 0.8f));
             spriteBatch.Draw(Properties.texturaUIFill2, energyTargetRect, new Color(1, 1, 1, 0.8f));
-
-           
-
         }
     }
 }

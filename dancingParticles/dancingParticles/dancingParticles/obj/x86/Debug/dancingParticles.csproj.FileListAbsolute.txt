@@ -70,3 +70,12 @@ Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock
 Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\screens\parallax_1.xnb
 Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\screens\parallax_2.xnb
 Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\screens\parallax_3.xnb
+Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\screens\Instrucciones.xnb
+Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\botones\botonAyuda.xnb
+Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\mock\gui\botones\botonCerrar.xnb
+Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\Audio\Bridge_180bps.xnb
+Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\Audio\Tema_180bps_Loop.xnb
+Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\Audio\Verso_180bps_Loop.xnb
+Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\Audio\audio.xgs
+Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\Audio\waves.xwb
+Z:\dancingParticles\dancingParticles\dancingParticles\bin\x86\Debug\Content\Audio\sounds.xsb

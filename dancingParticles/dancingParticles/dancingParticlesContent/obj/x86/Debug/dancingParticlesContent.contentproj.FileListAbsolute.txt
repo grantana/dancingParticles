@@ -1,2 +1,3 @@
-Z:\dancingParticles\dancingParticles\dancingParticlesContent\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Alan\dancingParticles\dancingParticles\dancingParticles\dancingParticlesContent\obj\x86\Debug\ResolveAssemblyReference.cache
+Z:\dancingParticles\dancingParticles\dancingParticlesContent\obj\x86\Debug\ResolveAssemblyReference.cache
+Z:\dancingParticles\dancingParticles\dancingParticlesContent\obj\x86\Debug\Audio\audio.xml

@@ -28,3 +28,12 @@ Content\mock\gui\screens\GameScreen_mid.xnb
 Content\mock\gui\screens\parallax_1.xnb
 Content\mock\gui\screens\parallax_2.xnb
 Content\mock\gui\screens\parallax_3.xnb
+Content\mock\gui\screens\Instrucciones.xnb
+Content\mock\gui\botones\botonAyuda.xnb
+Content\mock\gui\botones\botonCerrar.xnb
+Content\Audio\Bridge_180bps.xnb
+Content\Audio\Tema_180bps_Loop.xnb
+Content\Audio\Verso_180bps_Loop.xnb
+Content\Audio\audio.xgs
+Content\Audio\waves.xwb
+Content\Audio\sounds.xsb
