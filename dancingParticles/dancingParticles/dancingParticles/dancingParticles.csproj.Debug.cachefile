@@ -11,7 +11,6 @@ Content\mock\gui\planeta.xnb
 Content\mock\gui\spaceship.xnb
 Content\mock\gui\particula.xnb
 Content\mock\gui\nave.xnb
-Content\mock\gui\screens\GameScreen.xnb
 Content\mock\gui\cursor.xnb
 Content\mock\gui\screens\Win.xnb
 Content\mock\gui\Atractors.xnb
@@ -24,3 +23,8 @@ Content\mock\gui\botones\botonReload.xnb
 Content\mock\gui\barras.xnb
 Content\mock\gui\barrasLaserRelleno.xnb
 Content\mock\gui\barrasRellenoObjetivo.xnb
+Content\mock\gui\screens\GameScreen.xnb
+Content\mock\gui\screens\GameScreen_mid.xnb
+Content\mock\gui\screens\parallax_1.xnb
+Content\mock\gui\screens\parallax_2.xnb
+Content\mock\gui\screens\parallax_3.xnb

@@ -22,16 +22,18 @@ namespace dancingParticles
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        StateManager stateManager;
+        public StateManager stateManager;
         Texture2D screenSplashTexture, screenMenuTexture, screenPauseTexture, screenCreditsTexture, screenGameTexture, guiSelectorTexture, guiRectangeTexture, mouseTexture;
 
         /*** Pantallas ***/
-        Screen screenMenu;
+        Menu screenMenu;
+        Creditos screenCreditos;
         Juego juego;
         
 
         /***** UI ******/
         MouseDP mouse;
+        Vector2 posMouse;
         
 
         public Main()
@@ -68,6 +70,9 @@ namespace dancingParticles
             spriteBatch     =   new SpriteBatch(GraphicsDevice);
 
             /*** LOAD ASSETS ***/
+            Properties.parallax_1 = Content.Load<Texture2D>("mock/gui/screens/parallax_1");
+            Properties.parallax_2 = Content.Load<Texture2D>("mock/gui/screens/parallax_2");
+            Properties.parallax_3 = Content.Load<Texture2D>("mock/gui/screens/parallax_3");
             Properties.TexturaParticula     = Content.Load<Texture2D>("mock/gui/particula");
             Properties.TexturaNave          = Content.Load<Texture2D>("mock/gui/nave");
             Properties.texturaAtractor1     = Content.Load<Texture2D>("mock/gui/Atractors");
@@ -90,14 +95,16 @@ namespace dancingParticles
             guiRectangeTexture     =   Content.Load<Texture2D>("mock/gui/rect");
             mouseTexture           =   Content.Load<Texture2D>("mock/gui/cursor");
             // TODO: use this.Content to load your game content here
-            screenMenu = new Screen(screenMenuTexture, guiRectangeTexture);
+            screenMenu = new Menu(screenMenuTexture, guiRectangeTexture, this);
+            screenCreditos = new Creditos(screenCreditsTexture, guiRectangeTexture, this);
             //screenMenu.addButton(Properties.SCREEN_WITH/2 - 120, 130, 200, 35);
             //screenMenu.addButton(Properties.SCREEN_WITH/2 - 120, 180, 200, 35);
 
 
             /*** init juego ***/
-            juego = new Juego(screenGameTexture, guiRectangeTexture);
+            juego = new Juego(screenGameTexture, guiRectangeTexture, this);
             mouse = new MouseDP(mouseTexture, Vector2.Zero);
+            posMouse = new Vector2(Properties.SCREEN_WITH/2, Properties.SCREEN_HEIGHT/2);
         }
 
         /// <summary>
@@ -124,7 +131,7 @@ namespace dancingParticles
             {
                 Console.WriteLine("starting gameTime: " + gameTime);
                 stateManager.startInternalTimer(gameTime);
-                stateManager.loadNextScreen(2, 2, gameTime);
+                stateManager.loadNextScreen(1, 2, gameTime);
             }
             else
             {
@@ -142,8 +149,17 @@ namespace dancingParticles
              */
             switch (stateManager.state)
             {
+                case 1:
+                    updateMenuScreen(gameTime);
+                    break;
                 case 2:
-                    updateGameScreen();
+                    updateGameScreen(gameTime);
+                    break;
+                case 3:
+                   // updateCreditosScreen(gameTime);
+                    break;
+                case 4:
+                    updateCreditosScreen(gameTime);
                     break;
                 default:
                     //Console.WriteLine("state is not defined");
@@ -158,13 +174,37 @@ namespace dancingParticles
            // if (MouseState.Equals(MouseState))
 
             //UPDATE MOUSE POS
-            mouse.pos = new Vector2(Mouse.GetState().X, Mouse.GetState().Y);
+            // check Control Input
+            if (GamePad.GetState(PlayerIndex.One).IsConnected)
+            {
+                posMouse.X += GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X * Properties.mouseSpeed;
+                posMouse.X = MathHelper.Clamp(posMouse.X,0,Properties.SCREEN_WITH);
+                posMouse.Y -= GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.Y * Properties.mouseSpeed;
+                posMouse.Y = MathHelper.Clamp(posMouse.Y,0,Properties.SCREEN_HEIGHT);
+                mouse.pos = posMouse;
+            }
+            else
+            {
+                mouse.pos = new Vector2(Mouse.GetState().X, Mouse.GetState().Y);
+            }
         }
         
-        private void updateGameScreen()
+        private void updateGameScreen(GameTime gameTime)
         {
             /*** Hacer Update de Physics y cualquier cosa del juego ***/
-            juego.Update(Mouse.GetState());
+            juego.Update(mouse.pos, Mouse.GetState(), GamePad.GetState(PlayerIndex.One), gameTime);
+        }
+
+        private void updateMenuScreen(GameTime gameTime)
+        {
+            /*** Hacer Update de Physics y cualquier cosa del juego ***/
+            screenMenu.Update(mouse.pos, Mouse.GetState(), GamePad.GetState(PlayerIndex.One), gameTime);
+        }
+
+        private void updateCreditosScreen(GameTime gameTime)
+        {
+            /*** Hacer Update de Physics y cualquier cosa del juego ***/
+            screenCreditos.Update(mouse.pos, Mouse.GetState(), GamePad.GetState(PlayerIndex.One), gameTime);
         }
 
 
@@ -183,6 +223,16 @@ namespace dancingParticles
         {
             spriteBatch.Begin();
             screenMenu.Draw(spriteBatch);
+            mouse.Draw(spriteBatch);
+            //any custom extra draw here
+            spriteBatch.End();
+        }
+
+        protected void drawCreditosScreen()
+        {
+            spriteBatch.Begin();
+            screenCreditos.Draw(spriteBatch);
+            mouse.Draw(spriteBatch);
             //any custom extra draw here
             spriteBatch.End();
         }
@@ -190,7 +240,7 @@ namespace dancingParticles
 
         protected void drawGameScreen()
         {
-            graphics.GraphicsDevice.Clear(Color.Yellow);
+            graphics.GraphicsDevice.Clear(Color.Black);
             spriteBatch.Begin();
             juego.Draw(spriteBatch);
             mouse.Draw(spriteBatch);
@@ -224,6 +274,9 @@ namespace dancingParticles
                     break;
                 case 3:
                     drawGameOverScreen();
+                    break;
+                case 4:
+                    drawCreditosScreen();
                     break;
                 default:
                     Console.WriteLine("state is not defined");

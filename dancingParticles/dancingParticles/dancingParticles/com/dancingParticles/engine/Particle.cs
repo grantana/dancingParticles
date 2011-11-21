@@ -28,12 +28,12 @@ namespace com.dancingParticles.engine
         public float Mass { get { return mass; } }
 
 
-        public Particle(Vector2 direccion, int masa)
+        public Particle(Vector2 pos, Vector2 direccion, int masa)
         {
             textura = Properties.TexturaParticula;
 
 
-            this.position = new Vector2(100,30); /*** DEBUG ***/
+            this.position = pos;
             this.velocity = direccion;
             this.mass = masa;
             radio = mass / 2;
@@ -55,7 +55,7 @@ namespace com.dancingParticles.engine
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(textura, rect, source, Color.White, 0.0f, mitad, SpriteEffects.None, 1.0f);
+            spriteBatch.Draw(textura, rect, source, Color.FloralWhite, 0.0f, mitad, SpriteEffects.None, 1.0f);
         }
     }
 }

@@ -123,13 +123,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="mock\gui\screens\GameScreen.jpg">
-      <Name>GameScreen</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="mock\gui\cursor.png">
       <Name>cursor</Name>
       <Importer>TextureImporter</Importer>
@@ -197,6 +190,37 @@
     </Compile>
     <Compile Include="mock\gui\barrasRellenoObjetivo.png">
       <Name>barrasRellenoObjetivo</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="mock\gui\screens\GameScreen.png">
+      <Name>GameScreen</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="mock\gui\screens\GameScreen_mid.png">
+      <Name>GameScreen_mid</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="mock\gui\screens\parallax_1.png">
+      <Name>parallax_1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="mock\gui\screens\parallax_2.png">
+      <Name>parallax_2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="mock\gui\screens\parallax_3.png">
+      <Name>parallax_3</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

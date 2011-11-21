@@ -115,6 +115,8 @@
     <Compile Include="com\dancingParticles\gui\Physics.cs" />
     <Compile Include="com\dancingParticles\gui\Button.cs" />
     <Compile Include="com\dancingParticles\gui\Screen.cs" />
+    <Compile Include="com\dancingParticles\gui\screens\Creditos.cs" />
+    <Compile Include="com\dancingParticles\gui\screens\Menu.cs" />
     <Compile Include="com\dancingParticles\gui\screens\Juego.cs" />
     <Compile Include="com\dancingParticles\Properties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -22,12 +22,16 @@ namespace com.dancingParticles
         public static float startAcumEnergy = 0;
         public static float energyDelta = .0002f;
         public static float deltaAcumEnergy = .002f;
+        public static float mouseSpeed = 15;
         
 
         /*****UI*****/
         public static Texture2D texturaUIBarras;
         public static Texture2D texturaUIFill1;
         public static Texture2D texturaUIFill2;
+        public static Texture2D parallax_1;
+        public static Texture2D parallax_2;
+        public static Texture2D parallax_3;
 
 
         /****BOTONES****/
@@ -81,6 +85,6 @@ namespace com.dancingParticles
             get { return texturaAtractor4; }
             set { texturaAtractor4 = value; }
         }
-        public static int sizeAtractor = 100;
+        public static int sizeAtractor = 80;
     }
 }

@@ -35,7 +35,7 @@ namespace com.dancingParticles.engine
         {
             // Lanzar partículas
             Vector2 direccionRandom = new Vector2((float)(direccion.X + (random.NextDouble() - 0.5) * Properties.aleatoriedadParticulas), (float)(direccion.Y + (random.NextDouble() - 0.5) * Properties.aleatoriedadParticulas));
-            Particle p = new Particle(direccionRandom, random.Next(Properties.minSize, Properties.maxSize));
+            Particle p = new Particle(new Vector2(posicion.X+textura.Width/2,posicion.Y+textura.Height/2), direccionRandom, random.Next(Properties.minSize, Properties.maxSize));
             fisica.agregarParticula(p);
             //DISMUIR LA ENERGIA DE LA NAVE
             energia -= Properties.energyDelta;

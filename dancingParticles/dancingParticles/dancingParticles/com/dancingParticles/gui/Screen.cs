@@ -66,6 +66,11 @@ namespace com.dancingParticles.gui
             clickableElements.Add(new Button(posX, posY, width, height, texturaBT, btID));      
         }
 
+        public void setButtonAlpha(float alpha)
+        {
+
+        }
+
         
     }
 }
